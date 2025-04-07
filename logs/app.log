@@ -825,3 +825,10 @@ EFGIF의 상승은 인공지능 관련 수요 급증과 실적 호조에 기인�
 - 실적 발표와 섹터별 극심한 변동성…시장 전망은 어떻게 달라지나?  
 - EFG 84% 급등, Samsonite 19% 폭락…시장의 리스크 선호도가 바뀌고 있다?  
 - 금융 섹터 낙관 vs 소비재 경고…글로벌 시장의 다음 흐름은?
+2025-04-08 03:21:09,507 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:21:16,897 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:22:29,360 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:22:30,124 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:22:30,433 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:22:30,739 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:23:10,770 - utils - ERROR - 블로그 포스팅 실패
