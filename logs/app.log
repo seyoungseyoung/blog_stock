@@ -1,0 +1,827 @@
+2025-04-07 23:33:13,466 - __main__ - INFO - 프로그램 초기화 완료
+2025-04-07 23:33:15,560 - data_collector - ERROR - Error collecting gainers data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-07 23:33:19,599 - data_collector - ERROR - Error collecting losers data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-07 23:33:20,989 - data_collector - ERROR - Error collecting most_active data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-07 23:33:22,464 - data_collector - ERROR - Error collecting top_etfs data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-07 23:33:29,682 - market_analyzer - ERROR - DeepSeek API error: {"error":{"message":"Authentication Fails, Your api key: None is invalid","type":"authentication_error","param":null,"code":"invalid_request_error"}}
+2025-04-07 23:35:32,613 - __main__ - INFO - 프로그램 초기화 완료
+2025-04-07 23:35:33,920 - data_collector - ERROR - Error collecting gainers data: "['Price (Intraday)', '% Change'] not in index"
+2025-04-07 23:35:35,655 - data_collector - ERROR - Error collecting losers data: "['Price (Intraday)', '% Change'] not in index"
+2025-04-07 23:35:37,700 - data_collector - ERROR - Error collecting most_active data: "['Price (Intraday)', '% Change'] not in index"
+2025-04-07 23:35:40,483 - data_collector - ERROR - Error collecting top_etfs data: "['Price (Intraday)', '% Change'] not in index"
+2025-04-07 23:36:33,484 - __main__ - INFO - 프로그램 초기화 완료
+2025-04-07 23:36:51,580 - market_analyzer - ERROR - DeepSeek API error: Failed to deserialize the JSON body into the target type: missing field `model` at line 1 column 1025
+2025-04-07 23:38:56,196 - __main__ - INFO - 프로그램 초기화 완료
+2025-04-07 23:39:08,885 - market_analyzer - ERROR - Error analyzing market data: 'Change %'
+2025-04-07 23:39:51,108 - __main__ - INFO - 프로그램 초기화 완료
+2025-04-07 23:40:01,274 - market_analyzer - ERROR - Error preparing analysis data: 'Change'
+2025-04-07 23:40:01,274 - market_analyzer - ERROR - Error analyzing market data: 'Change'
+2025-04-07 23:45:58,072 - utils - INFO - 프로그램 초기화 완료
+2025-04-07 23:47:05,413 - market_analyzer - ERROR - Error calling DeepSeek API: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 754, in _error_catcher
+    yield
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1219, in read_chunked
+    self._update_chunk_length()
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1138, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1063, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1202, in read_chunked
+    with self._error_catcher():
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 226, in _get_deepseek_analysis
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 747, in send
+    r.content
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 899, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 822, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+2025-04-07 23:48:46,261 - utils - INFO - 프로그램 초기화 완료
+2025-04-07 23:50:36,109 - market_analyzer - ERROR - API 호출 오류 (시도 1): HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 754, in _error_catcher
+    yield
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1219, in read_chunked
+    self._update_chunk_length()
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1138, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1063, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1202, in read_chunked
+    with self._error_catcher():
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 227, in _get_deepseek_analysis
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 747, in send
+    r.content
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 899, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 822, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+2025-04-07 23:52:40,592 - WDM - INFO - ====== WebDriver manager ======
+2025-04-07 23:52:41,382 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-07 23:52:41,723 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-07 23:52:42,018 - WDM - INFO - There is no [win64] chromedriver "134.0.6998.165" for browser google-chrome "134.0.6998" in cache
+2025-04-07 23:52:42,018 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-07 23:52:42,729 - WDM - INFO - WebDriver version 134.0.6998.165 selected
+2025-04-07 23:52:42,729 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/win32/chromedriver-win32.zip
+2025-04-07 23:52:42,729 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/win32/chromedriver-win32.zip
+2025-04-07 23:52:43,158 - WDM - INFO - Driver downloading response is 200
+2025-04-07 23:52:45,523 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-07 23:52:46,654 - WDM - INFO - Driver has been saved in cache [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165]
+2025-04-07 23:53:01,157 - utils - ERROR - 네이버 로그인 실패
+2025-04-07 23:56:26,903 - utils - INFO - 프로그램 초기화 완료
+2025-04-07 23:57:28,984 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:01:05,136 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 00:01:05,942 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:01:06,272 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:01:06,640 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:01:07,424 - WDM - INFO - WebDriver version 134.0.6998.165 selected
+2025-04-08 00:01:07,435 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/win32/chromedriver-win32.zip
+2025-04-08 00:01:07,435 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/win32/chromedriver-win32.zip
+2025-04-08 00:01:07,843 - WDM - INFO - Driver downloading response is 200
+2025-04-08 00:01:10,915 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:01:11,356 - WDM - INFO - Driver has been saved in cache [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165]
+2025-04-08 00:02:42,098 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '현재 연결은 원격 호스트에 의해 강제로 끊겼습니다', None, 10054, None)': /session/f9bac317b943fe6f4730a496bf2fe244
+2025-04-08 00:02:56,371 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:04:48,175 - market_analyzer - ERROR - API 호출 오류 (시도 1): HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 754, in _error_catcher
+    yield
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1219, in read_chunked
+    self._update_chunk_length()
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1138, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1314, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1166, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1063, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 1202, in read_chunked
+    with self._error_catcher():
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 254, in _get_deepseek_analysis
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 747, in send
+    r.content
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 899, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 822, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+2025-04-08 00:06:18,454 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 00:06:19,266 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:06:19,761 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:06:20,089 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 00:07:14,077 - blog_poster - ERROR - Failed to create post: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x00348B39]
+	(No symbol) [0x00348E8B]
+	(No symbol) [0x00391AC2]
+	(No symbol) [0x0036D804]
+	(No symbol) [0x0038F20A]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\blog_poster.py", line 176, in create_post
+    if para.strip():
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x00348B39]
+	(No symbol) [0x00348E8B]
+	(No symbol) [0x00391AC2]
+	(No symbol) [0x0036D804]
+	(No symbol) [0x0038F20A]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+
+2025-04-08 00:07:14,079 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 00:08:47,193 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:10:43,775 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:12:01,905 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:13:38,973 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:15:54,544 - market_analyzer - ERROR - 시장 분석 중 오류 발생: 'MarketAnalyzer' object has no attribute 'format_blog_content'
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 61, in analyze_market_trend
+    formatted_analysis = self.format_blog_content(analysis)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MarketAnalyzer' object has no attribute 'format_blog_content'
+2025-04-08 00:15:54,557 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 00:15:55,324 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:15:55,645 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:15:55,961 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 00:16:27,120 - blog_poster - ERROR - Failed to create post: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x00348B39]
+	(No symbol) [0x00348E8B]
+	(No symbol) [0x00391AC2]
+	(No symbol) [0x0036D804]
+	(No symbol) [0x0038F20A]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+
+2025-04-08 00:16:27,120 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 00:17:39,763 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:19:14,720 - market_analyzer - ERROR - 시장 분석 중 오류 발생: 'MarketAnalyzer' object has no attribute 'format_blog_content'
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 61, in analyze_market_trend
+    formatted_analysis = self.format_blog_content(analysis)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MarketAnalyzer' object has no attribute 'format_blog_content'
+2025-04-08 00:19:14,720 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 00:19:15,551 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:19:15,870 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:19:16,176 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 00:19:40,509 - blog_poster - WARNING - iframe 전환 실패: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x00348B39]
+	(No symbol) [0x00348E8B]
+	(No symbol) [0x00391AC2]
+	(No symbol) [0x0036D804]
+	(No symbol) [0x0038F20A]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+
+2025-04-08 00:19:55,782 - blog_poster - WARNING - 제목 입력 필드를 찾을 수 없습니다
+2025-04-08 00:20:19,351 - blog_poster - ERROR - 발행 버튼을 찾을 수 없습니다
+2025-04-08 00:20:19,351 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 00:22:34,894 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 00:24:06,610 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 00:24:07,422 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:24:07,771 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 00:24:08,093 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 00:24:32,300 - blog_poster - WARNING - iframe 전환 실패: Message: 
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x00348B39]
+	(No symbol) [0x00348E8B]
+	(No symbol) [0x00391AC2]
+	(No symbol) [0x0036D804]
+	(No symbol) [0x0038F20A]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+
+2025-04-08 00:24:47,559 - blog_poster - WARNING - 제목 입력 필드를 찾을 수 없습니다
+2025-04-08 00:25:11,090 - blog_poster - ERROR - 발행 버튼을 찾을 수 없습니다
+2025-04-08 00:25:11,090 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 01:11:25,074 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:12:59,069 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:12:59,834 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:13:00,143 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:13:00,469 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:13:47,541 - utils - INFO - 블로그 포스팅 성공: [시장분석] 소비재 강세·테크 약세 분화 지속…中 경기 반등이 변수  
+
+**부제**: RH 급등은 프리미엄 소비 회복 신호, 레노버 하락엔 中 수요 부진 영향  
+
+**키워드**:  
+- 프리미엄 소비 트렌드 / PC 시장 성장률 하향  
+- Fed 신중 기조 / 중국 경기 둔화 리스크  
+- 품질주 선호(quality factor) / 방어성 포트폴리오  
+
+**설명**:  
+1. **전문성** 반영  
+   - "품질주 선호", "방어성 포트폴리오" 등 전문 용어 활용  
+   - Yahoo Finance 데이터를 근거로 한 사실적 서술  
+
+2. **구조적 명확성**  
+   - 주제: 상승/하락 주도주의 이중적 흐름과 거시적 배경 연결  
+   - 부제에서 구체적 종목 동인 제시  
+
+3. **글로벌 맥락** 강조  
+   - 中 경기 변수와 Fed 정책을 키워드로 노출  
+   - 단기/중기 시사점을 제목과 부제로 분리해 계층화  
+
+※ 참고: 제목은 18자(본문), 25자(부제)로 전문 매체의 헤드라인 스타일 준수
+2025-04-08 01:16:49,200 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:18:14,592 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:18:15,358 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:18:15,678 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:18:15,981 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:19:01,203 - utils - INFO - 블로그 포스팅 성공: **메인 제목**:  
+"RYTM 강세·LNVGY 약세…금리 급등에 테크株 흔들"  
+
+**부제목**:  
+"美 ADP 고용↑로 Fed 긴축 우려 확대…헬스케어·디펜시브株 관심↑"  
+
+**설명**:  
+- 메인 제목은 15자 내외로 주요 주가 동향(RYTM/LNVGY)과 금리 변동성(테크株 영향)을 압축해 강조했습니다.  
+- 부제목은 거시적 배경(ADP 고용→Fed 긴축)과 중기 전략(섹터 로테이션 필요성)을 구체화했으며, 전문 용어(ADP, 디펜시브)는 시장 참여자 이해도에 맞춰 사용했습니다.  
+- 감정적 표현 없이 팩트 중심 구성했으며, 예시와 동일한 형식(주요 동인→맥락→시사점 구조)을 적용했습니다.
+2025-04-08 01:22:08,748 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:24:46,215 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:25:57,439 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:25:58,245 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:25:58,591 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:25:58,917 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:26:40,660 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 01:29:12,195 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:30:57,683 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:30:58,465 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:30:58,813 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:30:59,329 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:31:46,495 - utils - INFO - 블로그 포스팅 성공: **메인 제목 (15자 내외):**  
+"소비재↑·IT↓…거시불확실성에 시장 갈등"  
+
+**부제목 (25자 내외):**  
+"RH 15%↑ vs 中 바이오텍↓…연준 금리 기조 주목"  
+
+**설명:**  
+- 메인 제목은 **소비재 강세(RH 급등)**와 **IT/바이오텍 약세**의 대비를 강조하며, 거시경제 불확실성(연준 정책·인플레이션)이 시장을 양분하는 상황을 함축했습니다.  
+- 부제목은 구체적인 **주가 변동성(RH↑/HUTCHMED↓)**을 제시하고, 투자자들이 주목해야 할 **연준의 금리 정책**을 핵심 변수로 언급해 중립적이면서도 정보성을 높였습니다.  
+- ↑↓ 기호를 활용해 가독성을 강화하고, 중국 리스크·바이오텍 약세 등 부가 요소를 자연스럽게 연결했습니다.
+2025-04-08 01:36:39,781 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:38:43,880 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:38:44,658 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:38:45,061 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:38:45,412 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:39:35,848 - utils - INFO - 블로그 포스팅 성공: ### 메인 제목 (15자 내외):  
+**"금리 불확실성↑…테크주 반등 기회?"**  
+
+### 부제목 (25자 내외):  
+**"AI·소형주 15% 급등 vs 암호화폐↓…투자 포인트 3가지"**  
+
+### 제목 구성 설명:  
+1. **메인 제목**:  
+   - **"금리 불확실성↑"** → Fed 정책과 거시경제 리스크를 간결히 강조  
+   - **"테크주 반등 기회?"** → 핵심 관심 업종(테슬라 등)과 질문형으로 호기심 유발  
+
+2. **부제목**:  
+   - **"AI·소형주 15% 급등"** → 상승 주도업종("Other" 카테고리) 구체화  
+   - **"암호화폐↓"** → 하락 요인 명시해 균형감 추가  
+   - **"투자 포인트 3가지"** → 실용적 정보를 약속하며 클릭 유도  
+
+### 참고: 화살표(↑↓) 사용으로 시각적 동향 강조 및 SNS 공유 적합성 고려
+2025-04-08 01:43:07,170 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:47:26,968 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 01:47:27,745 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:47:28,092 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 01:47:28,414 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 01:48:17,440 - utils - INFO - 블로그 포스팅 성공: **거시경제 흐름 속 업종별 투자 전략: AI부터 금융주까지**  
+
+최근 금리와 인플레이션 변동성이 시장을 흔들며 업종별로 극명한 차이를 보이고 있습니다. AI 관련주는 급등하는 반면 금융주는 부진한 모습인데요, 과연 어디에 베팅해야 할까요?  
+
+### 주목할 만한 시장 동향  
+- **"15% 급등 vs 15% 급락"**: 거시경제가 만들어낸 투자 전쟁터의 현장을 분석합니다.  
+- **"연준 금리 기조와 테크주의 상관관계"**: 4.2% 국채 수익률이 암시하는 시장 심리를 읽어보세요.  
+- **"OTT·바이오텍 거래량 200% 폭증"**: '리스크 온' 시대에 주목해야 할 3대 업종을 소개합니다.  
+
+### 데이터로 보는 투자 포인트  
+- **거래량 급증 업종의 공통점**: 30일 평균 대비 200% 증가한 종목들은 어떤 특징이 있을까?  
+- **금리 민감주 vs 성장주**: 포트폴리오 전략을 어떻게 세워야 할지 비교 분석합니다.  
+- **RSI 70 돌파 종목 vs 실적 부난 종목**: 조정 가능성을 체크하는 핵심 포인트.  
+
+### 미래를 위한 전략  
+- **M&A 회복 기대감**: 투자은행주의 지속 가능성은?  
+- **소형주 과열 신호 속 차세대 AI 유니콘**: 다음 주목할 기업을 찾아서.  
+
+이번 분석을 통해 거시경제의 흐름과 업종별 전략을 종합적으로 이해하시길 바랍니다. 투자 결정 전, 꼭 참고하세요!  
+
+> 💡 **예시 조합**  
+> **메인**: "15% 급등 vs 15% 급락…거시경제가 만든 투자 전쟁터"  
+> **서브**: "200% 거래량 폭증 업종의 비밀과 연준 금리 기대감의 연결고리"  
+
+이 제목들은 시장의 핵심 이슈를 담으면서도 독자의 호기심을 자극하도록 구성되었습니다. 어떤 주제가 가장 궁금하신가요?
+2025-04-08 01:53:41,248 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:56:43,226 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 01:59:41,586 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:02:25,679 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:02:26,457 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:02:26,891 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:02:27,191 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:03:02,242 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 02:04:44,429 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:04:52,836 - market_analyzer - ERROR - Error preparing analysis data: 'date'
+2025-04-08 02:04:52,836 - market_analyzer - INFO - gainers 데이터 샘플: {'Symbol': 'EFGIF', 'Name': 'EFG International AG', 'Price': '15.00 +6.85 (+84.05%)', '% Change': '+84.05%'}
+2025-04-08 02:04:52,836 - market_analyzer - INFO - losers 데이터 샘플: {'Symbol': 'HCM', 'Name': 'HUTCHMED (China) Limited', 'Price': '12.24 -2.14 (-14.89%)', '% Change': '-14.89%'}
+2025-04-08 02:04:52,836 - market_analyzer - INFO - most_active 데이터 샘플: {'Symbol': 'NVDA', 'Name': 'NVIDIA Corporation', 'Price': '95.36 +1.05 (+1.11%)', '% Change': '+1.11%'}
+2025-04-08 02:04:52,836 - market_analyzer - INFO - top_etfs 데이터 샘플: {'Symbol': 'SOXL', 'Name': 'Direxion Daily Semiconductor Bull 3X Shares', 'Price': '8.81 +0.09 (+0.97%)', '% Change': '+0.97%'}
+2025-04-08 02:04:52,836 - market_analyzer - ERROR - 시장 분석 중 오류 발생: 'date'
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 43, in analyze_market_trend
+    prepared_data = self._prepare_analysis_data(market_data, news)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 103, in _prepare_analysis_data
+    latest_news_date = max(news, key=lambda x: x.get('date', ''))['date']
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'date'
+2025-04-08 02:04:52,845 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:04:53,598 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:04:53,908 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:04:54,225 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:05:23,262 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 02:05:31,436 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:05:39,640 - market_analyzer - ERROR - Error preparing analysis data: 'date'
+2025-04-08 02:05:39,640 - market_analyzer - INFO - gainers 데이터 샘플: {'Symbol': 'EFGIF', 'Name': 'EFG International AG', 'Price': '15.00 +6.85 (+84.05%)', '% Change': '+84.05%'}
+2025-04-08 02:05:39,640 - market_analyzer - INFO - losers 데이터 샘플: {'Symbol': 'HCM', 'Name': 'HUTCHMED (China) Limited', 'Price': '12.24 -2.14 (-14.89%)', '% Change': '-14.89%'}
+2025-04-08 02:05:39,641 - market_analyzer - INFO - most_active 데이터 샘플: {'Symbol': 'NVDA', 'Name': 'NVIDIA Corporation', 'Price': '95.49 +1.18 (+1.25%)', '% Change': '+1.25%'}
+2025-04-08 02:05:39,641 - market_analyzer - INFO - top_etfs 데이터 샘플: {'Symbol': 'SOXL', 'Name': 'Direxion Daily Semiconductor Bull 3X Shares', 'Price': '8.85 +0.12 (+1.32%)', '% Change': '+1.32%'}
+2025-04-08 02:05:39,641 - market_analyzer - ERROR - 시장 분석 중 오류 발생: 'date'
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 43, in analyze_market_trend
+    prepared_data = self._prepare_analysis_data(market_data, news)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tpdud\code\blog\blog\src\market_analyzer.py", line 103, in _prepare_analysis_data
+    latest_news_date = max(news, key=lambda x: x.get('date', ''))['date']
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'date'
+2025-04-08 02:05:39,644 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:05:40,395 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:05:40,697 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:05:40,993 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:05:44,787 - blog_poster - ERROR - Login failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=134.0.6998.178)
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x002DF83E]
+	(No symbol) [0x0037455E]
+	(No symbol) [0x0038EB19]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+Traceback (most recent call last):
+  File "c:\Users\tpdud\code\blog\blog\src\blog_poster.py", line 72, in login
+    self.driver.execute_script(
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\selenium\webdriver\remote\webdriver.py", line 407, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\tpdud\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=134.0.6998.178)
+Stacktrace:
+	GetHandleVerifier [0x004AC7F3+24435]
+	(No symbol) [0x00432074]
+	(No symbol) [0x003006E3]
+	(No symbol) [0x002DF83E]
+	(No symbol) [0x0037455E]
+	(No symbol) [0x0038EB19]
+	(No symbol) [0x0036D5B6]
+	(No symbol) [0x0033C54F]
+	(No symbol) [0x0033D894]
+	GetHandleVerifier [0x007B70A3+3213347]
+	GetHandleVerifier [0x007CB0C9+3295305]
+	GetHandleVerifier [0x007C558C+3271948]
+	GetHandleVerifier [0x00547360+658144]
+	(No symbol) [0x0043B27D]
+	(No symbol) [0x00438208]
+	(No symbol) [0x004383A9]
+	(No symbol) [0x0042AAC0]
+	BaseThreadInitThunk [0x75255D49+25]
+	RtlInitializeExceptionChain [0x772FCE3B+107]
+	RtlGetAppContainerNamedObjectPath [0x772FCDC1+561]
+
+2025-04-08 02:05:44,802 - utils - ERROR - 네이버 로그인 실패
+2025-04-08 02:06:11,873 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:06:21,829 - market_analyzer - WARNING - No date field in news, using current date: 2025-04-08
+2025-04-08 02:08:59,475 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:09:00,250 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:09:00,539 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:09:00,861 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:09:42,909 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 02:11:44,502 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:11:53,734 - market_analyzer - WARNING - No date field in news, using current date: 2025-04-08
+2025-04-08 02:13:58,712 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:13:59,500 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:13:59,833 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:14:00,157 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:14:44,740 - utils - INFO - 블로그 포스팅 성공: **2025년 4월 글로벌 시장 핵심 이슈: 금리·AI·지정학의 교차로**  
+
+1. **"S&P 500 5,300선 회복 vs 유럽 시장 하락…지역별 차이에 주목"**  
+   - 미국과 유럽 시장의 극명한 대조를 데이터로 분석.  
+
+2. **"AI 강세와 금리 인하 기대, 시장을 움직이는 듀얼 엔진"**  
+   - 테크 종목의 상승세와 중앙은행 정책이 미치는 영향.  
+
+3. **"원유 $82·비트코인 $70k 횡보…리스크 선호도 신호 포착"**  
+   - 원자재와 암호화폐 시장의 상반된 움직임.  
+
+4. **"엔화 152엔 돌파, 일본 당국의 개입 가능성에 시장 긴장"**  
+   - 외환 시장에서의 핵심 변수와 관측 포인트.  
+
+5. **"중국 부양책 vs 유럽 불확실성…아시아 시장 반등 가능성"**  
+   - 정책 효과와 지역별 시장 전망 대비.  
+
+6. **"연준·ECB 금리 결정 전, 포트폴리오 리스크 점검 시점"**  
+   - 주요 금리 정책이 시장에 미칠 파장 분석.  
+
+**포인트**  
+- **구체적 데이터** (예: "S&P 500 5,300선", "엔화 152엔")로 신뢰성 강화.  
+- **대비 구조** (예: "회복 vs 하락")로 독자의 관심 유도.  
+- **현재 이슈 집중** (금리, AI, 지정학적 변수)을 통한 시의성 확보.  
+
+*실제와 유사한 분석 톤을 유지하며, 독자의 판단에 맡기는 객관적 전달이 핵심입니다.*
+2025-04-08 02:15:35,137 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:15:43,561 - market_analyzer - WARNING - No date field in news, using current date: 2025-04-08
+2025-04-08 02:17:07,041 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:17:21,452 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:18:58,229 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:18:58,995 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:18:59,310 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:18:59,630 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:19:41,159 - utils - INFO - 블로그 포스팅 성공: **"Other 섹터 84% 급등 vs 16% 폭락…금리 인하 기대 속 극단적 시장 변동성"**  
+
+최근 Other 섹터는 메타버스·블록체인 테마를 중심으로 84% 급등과 16% 폭락이 동시에 발생하며 극명한 분화를 보이고 있습니다. 금리 인하 기대가 고위험 자산으로의 자금 흐름을 촉발하면서 변동성이 확대된 것으로 분석됩니다.  
+
+유명 투자자들은 메타(Meta)와 치폴레(Chipotle) 등 특정 종목에 집중하는 모습이 관찰되지만, 시장 전체로는 상승·하락이 공존하는 이중적인 양상이 지속되고 있습니다. 2025년 투자 전략의 키워드는 '분산'이 될 전망입니다.  
+
+이처럼 극한의 시장 환경에서 투자자들은 변동성 활용 방안에 대한 고민이 필요한 시점입니다.
+2025-04-08 02:23:54,903 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:24:04,579 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:26:15,915 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:26:16,679 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:26:17,182 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:26:17,518 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:27:04,902 - utils - INFO - 블로그 포스팅 성공: ### **시장 양극화 심화: EFGIF 80% 급등 vs 레노버 16% 폭락의 배경**  
+
+최근 시장에서 EFGIF의 80% 급등과 레노버의 16% 폭락이 동시에 발생하며 투자자들의 관심이 집중되고 있습니다. 이 같은 극단적인 움직임은 **M&A 열풍**과 **AI PC 시장의 기대감 차이**에서 비롯된 것으로 분석됩니다. EFGIF는 인수합병(M&A) 소식에 힘입어 강세를 보인 반면, 레노버는 AI PC 경쟁에서의 실적 우려로 약세를 기록했습니다.  
+
+---
+
+### **Fed 금리 불확실성 속 테크주 침체…안전자산 vs 성장주 전략**  
+
+미국 Fed의 금리 정책 기조가 테크주를 중심으로 시장 변동성을 키우고 있습니다. 금리 인상 가능성이 제기되며 성장주는 일제히 하락세를 보인 반면, 금융주 등 안전자산은 상대적으로 강세를 유지 중입니다. **거시경제 리스크**가 고조되는 만큼, 포트폴리오 다각화 전략이 중요해지는 시점입니다.  
+
+---
+
+### **시장 리더십 경쟁: 84% 급등주 vs 16% 폭락주의 교훈**  
+
+하루 만에 84% 오른 종목과 16% 추락한 종목이 공존하는 현상은 시장의 **극단적 분산화**를 잘 보여줍니다. 이 같은 차이는 투자 테마별 수요 차이와 시장 심리의 변동성이 반영된 결과로, 단기 투자보다는 **산업별 트렌드 분석**이 필수적인 환경입니다.  
+
+---
+
+### **금융주의 강세 vs AI주의 약세…양극화 시장의 심층 분석**  
+
+최근 금융주가 강세를 보이는 가운데 AI 관련 종목은 부진한 모습을 이어가고 있습니다. 이는 **고금리 환경**에서의 수익 창출 능력 차이와 투자자들의 **리스크 회피 성향**이 반영된 현상입니다. 산업별 상반된 흐름은 향후 시장 전망을 가늠하는 중요한 지표가 될 전망입니다.  
+
+---  
+
+**✍️ 시사점**  
+- **M&A 테마**와 **AI PC 경쟁**은 단기 시장 변동성의 주요 드라이버로 작용 중입니다.  
+- **Fed 금리 정책**과 **안전자산 수요**는 포트폴리오 전략의 키워드입니다.  
+- 시장의 양극화 현상은 **투자 심리**와 **산업별 펀더멘털**을 종합적으로 분석해야 함을 시사합니다.
+2025-04-08 02:31:52,388 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:31:59,818 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:33:54,179 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:33:54,947 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:33:55,268 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:33:55,568 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:34:41,620 - utils - INFO - 블로그 포스팅 성공: ### 금융의 디지털 혁명 vs 테크의 추락: 2025년 시장이 선택할 진짜 승자는?  
+
+최근 시장에서 눈에 띄는 현상은 금융섹터의 강세와 테크주들의 부진이다. EFG는 84% 급등한 반면, Lenovo는 16% 폭락하며 극명한 대비를 보였다. 이는 단순한 주가 변동이 아닌, 디지털 자산 관리의 부상과 테크 업종의 성장 한계를 반영하는 신호로 읽힌다.  
+
+금융사의 디지털 전환은 이미 가시적인 성과로 이어지고 있다. 블록체인 기반 뱅킹 시스템은 운영 효율을 25% 끌어올렸고, 프라이빗 뱅크들은 고객 맞춤형 서비스로 유입 자본을 확대 중이다. 반면 AI PC와 같은 테크 트렌드는 예상보다 수요가 부진하며 실적 격차를 벌리고 있다.  
+
+연준의 금리 정책 불확실성 속에서도 'Quality Flight' 현상은 지속되고 있다. 투자자들은 안정적인 실적과 혁신 가능성을 동시에 갖춘 종목을 선호하며, 이는 금융섹터의 디지털 혁신이 주목받는 배경이 되고 있다.  
+
+과거 테크주 중심의 시장 구도가 무너질 것인지는 아직 미지수다. 하지만 디지털 전환이 가속화되는 현재, 시장의 선택은 기술 자체보다 이를 현실에 적용하는 능력에 달려 있을 것이다.
+2025-04-08 02:36:55,982 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:37:08,247 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:39:17,342 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:39:18,143 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:39:18,449 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:39:18,766 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:40:06,014 - utils - INFO - 블로그 포스팅 성공: **"EFGIF 84% 급등 vs LNVGY 16% 폭락…시장 분화 현상의 함의"**  
+
+최근 EFGIF의 84% 급등과 LNVGY의 16% 폭락이 동시에 발생하며 시장의 극단적 분화 현상이 두드러지고 있다. 이 같은 움직임은 선물 시장의 하락 전망과 맞물려 투자자들의 신중한 접근을 요구한다. 특정 종목의 과열 또는 냉각이 단순한 개별 이슈를 넘어 시장 전반의 위험 신호로 해석될 수 있기 때문이다.  
+
+**"연준 발언에 S&P 선물 1.8% 하락…4월의 계절적 리스크 재점검"**  
+
+연준의 금리 정책 관련 발언이 S&P 선물을 1.8% 끌어내렸다. 이는 4월 전통적인 'Sell in April' 현상과 겹치며 시장의 불확실성을 가중시키고 있다. 역사적으로 4월은 변동성이 높은 시기로 알려져 있으나, 현재의 하락 움직임이 단순한 계절성인지, 아니면 보다 근본적인 조정의 시작인지에 대한 논의가 필요해 보인다.  
+
+**"LNVGY 폭락의 배경…AI PC 수요 전환과 중국 시장의 영향"**  
+
+LNVGY의 16% 폭락은 AI PC 수요 전환의 지연 가능성과 중국 시장의 부진이 복합적으로 작용한 결과로 보인다. 특히 중국 내 기술 수요 둔화가 글로벌 공급망에 미치는 영향이 크다는 분석이 나오며, 해당 종목의 약세가 단순한 실적 악화 이상의 의미를 가질 수 있음을 시사한다.  
+
+**"디지털 자산 관리 성장 vs PC 시장 위축…2025년 시장 구조 변화 예고"**  
+
+디지털 자산 관리 플랫폼의 성장과 PC 시장의 감소가 대조를 이루며 미래 시장의 구조적 변화를 암시하고 있다. 2025년까지 이 같은 추세가 지속될 경우, 투자 유입이 특정 섹터에 집중되는 현상이 더욱 뚜렷해질 전망이다.  
+
+**"10년물 금리 4.5% 돌파와 빅테크 약세…다음 주 CPI 발표가 시장 분기점 될 것"**  
+
+10년물 금리가 4.5%를 돌파하면서 빅테크 종목의 약세가 이어지고 있다. 다음 주 예정된 CPI 발표는 시장의 향후 방향성을 결정할 중대한 변수로 작용할 전망이다. 금리 인상 기대와 인플레이션 우려가 교차하는 가운데, 투자자들은 데이터에 대한 예민한 반응을 보일 것으로 보인다.  
+
+**추천 제목:**  
+**"EFGIF 84% 상승과 LNVGY 16% 하락…시장 분화 속 전략적 포인트"**  
+
+상승과 하락 종목의 극명한 대비는 시장의 위험과 기회가 공존하고 있음을 강조한다. 단순한 변동성 분석을 넘어, 이러한 분화 현상이 향후 몇 주간의 시장 흐름에 어떤 신호를 줄지 주목할 필요가 있다.
+2025-04-08 02:42:49,572 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:42:58,806 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:45:17,821 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:45:18,589 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:45:18,900 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:45:19,209 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:46:22,248 - utils - INFO - 블로그 포스팅 성공: 다음은 호기심을 유발하면서도 전문성을 담은 블로그 포스팅 제목을 자연스러운 글 형태로 다듬은 내용입니다.  
+
+1. EFG 주가가 84% 급등한 배경에는 APAC 지역 자산이 40% 증가한 점이 주요한 역할을 했습니다. 이번 반전은 시장의 예상을 뛰어넘는 결과로 평가됩니다.  
+
+2. 레노버 주가가 16% 추락한 원인은 AI 서버 부문의 부진과 중국 시장의 성장 둔화가 복합적으로 작용한 것으로 분석됩니다. 이번 하락은 3가지 요인이 중첩된 결과입니다.  
+
+3. 해리포터와 아바타 프랜차이즈 간의 콘텐츠 경쟁이 다시 불붙으면서 스트리밍 시장의 주도권을 놓고 치열한 경쟁이 예상됩니다.  
+
+4. CPI 발표 후 S&P500 선물이 1.8% 하락했으며, 6월 금리 인하 확률은 78%에서 41%로 급락했습니다. 이번 데이터는 시장 예측을 크게 뒤흔들었습니다.  
+
+5. NFL 드래프트가 지역 경제에 미친 영향은 1.2억 달러에 달하는 것으로 집계되었습니다. 스포츠 이벤트가 지역 경제 지도를 바꾸는 사례는 점점 더 늘어나고 있습니다.
+2025-04-08 02:48:34,350 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:48:44,026 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:50:55,226 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:51:03,510 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:52:57,563 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:52:58,355 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:52:58,673 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:52:59,032 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:53:56,282 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 02:56:10,025 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 02:56:19,697 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 02:57:57,121 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 02:57:57,881 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:57:58,235 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 02:57:58,569 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 02:59:02,700 - utils - INFO - 블로그 포스팅 성공: "2025년 시장의 극단적 분화: EFGIF 84% 급등과 SMSEY 19% 폭락의 함의"  
+
+최근 글로벌 시장에서 EFGIF의 84% 급등과 SMSEY의 19% 폭락이 동시에 발생하며 투자자들의 혼란을 가중시키고 있다. 이 같은 극단적 변동성은 단순한 주가 움직임을 넘어 시장 구조의 변화를 암시한다.  
+
+EFGIF의 상승은 인공지능 관련 수요 급증과 실적 호조에 기인한 것으로 분석된다. 반면 SMSEY의 하락은 글로벌 공급망 재편과 수출 부진의 영향이 크다. 같은 시장에서 완전히 상반된 흐름이 공존하는 현상은 2025년을 앞둔 시장의 불확실성을 단적으로 보여준다.  
+
+특히 금융주 강세와 소비주 약세가 동시에 나타나는 혼조 장세는 경기 회복 기대와 인플레이션 우려가 교차하는 복잡한 환경을 반영한다. 일각에서는 블랙먼데이를 우려하는 목소리도 나오지만, 엔터테인먼트 산업의 호조와 같은 이중적 신호는 시장 판독을 더욱 어렵게 만든다.  
+
+이러한 분화 현상이 단기적 조정에 그칠지, 아니면 새로운 시장 질서의 시작인지에 대한 논의가 활발하다. 금리 인하 기대와 인플레이션 압력이 공존하는 가운데, 시장 참여자들은 데이터에 대한 보다 정교한 해석이 필요한 시점이다.
+2025-04-08 03:02:52,125 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:02:59,643 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:04:29,978 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:04:30,794 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:04:31,118 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:04:31,433 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:05:32,652 - utils - INFO - 블로그 포스팅 성공: 2025년 시장, 극단적 변동성 속 투자 전략의 방향성  
+
+최근 글로벌 시장은 금융주 급등과 소비재주 폭락이라는 극명한 분화 현상을 보이며 투자자들에게 혼란을 주고 있습니다. 미국 주식 선물의 추가 하락 전망이 제기되면서 시장의 연쇄 충격에 대한 우려도 커지고 있는 상황입니다.  
+
+이러한 변동성 확대는 금리 인상과 기업 실적 악화라는 이중고에 기인합니다. 특히, 주요 중앙은행들의 긴축 정책 지속과 기업들의 수익성 둔화가 맞물리면서 시장의 불확실성이 더욱 가중되고 있습니다. 일각에서는 방어적 포트폴리오 재편이 유효한 대응책일 수 있다는 분석도 나오지만, 과연 이대로만 흘러갈지는 미지수입니다.  
+
+현재의 시장 환경은 단순한 조정을 넘어 구조적인 변화의 신호로 읽힙니다. 투자자들은 단기적인 변동성에 휩쓸리기보다 시장의 근본적인 흐름을 파악하는 데 집중할 필요가 있습니다. 특히, 섹터 간 분화가 심화되는 만큼, 개별 산업의 성장 잠재력과 리스크 요인을 세밀하게 평가하는 것이 중요해졌습니다.  
+
+앞으로의 시장은 보다 예측하기 어려운 국면으로 접어들 가능성이 큽니다. 투자 전략을 수립할 때는 유동성 환경, 정책 변화, 글로벌 경제의 상호연관성 등을 종합적으로 고려해야 할 시점입니다.
+2025-04-08 03:07:39,077 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:07:48,377 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:09:23,917 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:09:31,843 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:10:51,118 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:10:51,874 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:10:52,198 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:10:52,500 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:11:28,978 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 03:17:23,445 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:17:30,699 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:18:44,085 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:18:44,868 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:18:45,478 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:18:46,017 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:19:46,949 - utils - INFO - 블로그 포스팅 성공: - EFG International AG 급등과 Samsonite 폭락…시장 변동성 확대의 신호인가?  
+- 금융주 강세 vs 소비재주 약세…시장 분화가 예고하는 것은?  
+- 실적 발표와 섹터별 극심한 변동성…시장 전망은 어떻게 달라지나?  
+- EFG 84% 급등, Samsonite 19% 폭락…시장의 리스크 선호도가 바뀌고 있다?  
+- 금융 섹터 낙관 vs 소비재 경고…글로벌 시장의 다음 흐름은?

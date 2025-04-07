@@ -1,0 +1,34 @@
+data_collection:
+  yfinance:
+    history_days: 3
+    indices:
+      - ^GSPC  # S&P 500
+      - ^DJI   # Dow Jones
+      - ^IXIC  # NASDAQ
+      - ^RUT   # Russell 2000
+  
+  market_data:
+    categories:
+      - gainers
+      - losers
+      - most_active
+      - top_etfs
+
+blog_settings:
+  platform: naver
+  category_id: default
+  tags_limit: 10
+  auto_publish: true
+
+logging:
+  level: INFO
+  file: logs/app.log
+
+settings:
+  auto_confirm: true
+  auto_post: true
+  auto_login: true
+
+blog:
+  url: "https://blog.naver.com/gongnyangi"
+  category: "오늘의 이슈"

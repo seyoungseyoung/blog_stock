@@ -189,17 +189,22 @@ class MarketAnalyzer:
 
         template += """
 작성 요구사항:
-1. 시장 동향의 핵심 포인트 분석
-2. 주요 종목의 성과와 원인 설명
-3. 거시경제적 맥락과 시장 영향
-4. 투자자 반응과 시장 전망
-5. 중요한 하나의 이슈에 대해서만 깊이있게 작성하기
+- 주요 종목들의 급등락 원인과 시장 영향
+- 시장 전반의 변동성과 불확실성 요인
+- 섹터별 차별화 동향
+- 금리, 통화정책, 경제지표와의 연관성
+- 글로벌 시장 간 상호작용
+- 주요 리스크 요인
+- 단기 변동성 요인
+- 중장기 시장 방향성
+- 주요 모니터링 포인트
 
 작성 스타일:
 - 전문가적 관점에서 자연스럽게 줄글 형태로 서술
 - 구체적인 데이터와 수치 활용
 - 핵심 내용 중심으로 간결하게 작성
-- 개별 이슈별 분석은 제외하고 종합적인 시장 논평만 작성
+- 중복된 내용이나 반복적인 설명 제외
+- 투자 조언이나 권유는 포함하지 않음
 - 별표(*)나 다른 특수문자는 절대 사용하지 않음
 """
         
@@ -213,8 +218,8 @@ class MarketAnalyzer:
 
 제목 작성 요구사항:
 - 의문형으로 전문성 있게 작성
-- 시장의 핵심 이슈를 반영
-- 종합적인 시장 동향을 대표할 수 있는 제목
+- 시장의 핵심 이슈를 반영해서 하나만 작성
+- 종합적인 시장 동향을 대표할 수 있는 하나의 제목
 - 별표(*)나 다른 특수문자는 사용하지 않음
 
 제목 예시:
@@ -233,7 +238,7 @@ class MarketAnalyzer:
         return "\n".join([f"- {item['title']}" for item in news])
 
     def _get_deepseek_analysis(self, prompt: str, max_retries=3, timeout=60) -> str:
-        """DeepSeek API를 호출하여 분석 결과를 얻고, 이를 다시 다듬습니다."""
+        """DeepSeek API를 호출하여 분석 결과를 얻습니다."""
         for attempt in range(max_retries):
             try:
                 headers = {
@@ -241,7 +246,6 @@ class MarketAnalyzer:
                     'Content-Type': 'application/json'
                 }
                 
-                # 첫 번째 API 호출: 초기 분석 생성
                 payload = {
                     "model": "deepseek-chat",
                     "messages": [
@@ -254,7 +258,7 @@ class MarketAnalyzer:
                     "max_tokens": 1500
                 }
                 
-                print(f"초기 분석 생성 중... (시도 {attempt+1}/{max_retries})")
+                print(f"분석 생성 중... (시도 {attempt+1}/{max_retries})")
                 response = requests.post(
                     'https://api.deepseek.com/v1/chat/completions',
                     headers=headers,
@@ -263,13 +267,17 @@ class MarketAnalyzer:
                 )
                 
                 if response.status_code == 200:
-                    initial_result = response.json()['choices'][0]['message']['content']
-                    # 초기 결과에서 별표(*) 제거
-                    initial_result = initial_result.replace('*', '')
+                    result = response.json()['choices'][0]['message']['content']
+                    # 결과에서 별표(*) 제거
+                    result = result.replace('*', '')
                     
-                    # 두 번째 API 호출: 결과 다듬기
+                    # 제목 생성의 경우 추가 다듬기 없이 바로 반환
+                    if "제목을 작성해주세요" in prompt:
+                        return result
+                    
+                    # 본문 내용인 경우에만 다듬기 진행
                     refinement_prompt = f"""다음 내용을 더 자연스럽고 전문적인 블로그 스타일로 다듬어주세요.
-원문: {initial_result}
+원문: {result}
 
 다듬기 요구사항:
 1. 하루 1번 게시되기에 현재 시황에 집중
@@ -301,13 +309,13 @@ class MarketAnalyzer:
                     )
                     
                     if refinement_response.status_code == 200:
-                        result = refinement_response.json()['choices'][0]['message']['content']
+                        refined_result = refinement_response.json()['choices'][0]['message']['content']
                         # 결과에서 별표(*) 제거
-                        result = result.replace('*', '')
-                        return result
+                        refined_result = refined_result.replace('*', '')
+                        return refined_result
                     else:
                         self.logger.error(f"다듬기 API 오류: {refinement_response.status_code} - {refinement_response.text}")
-                        return initial_result
+                        return result
                 else:
                     self.logger.error(f"API 오류 (시도 {attempt+1}): {response.status_code} - {response.text}")
                     if attempt < max_retries - 1:
