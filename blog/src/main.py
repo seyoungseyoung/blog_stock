@@ -167,13 +167,13 @@ def main():
 
 if __name__ == "__main__":
     # 한국 시간 기준 매일 오전 7:30과 오후 9:00에 실행
-    #schedule.every().day.at("07:30").do(main)
-    #schedule.every().day.at("21:00").do(main)
+    schedule.every().day.at("07:30").do(main)
+    schedule.every().day.at("21:00").do(main)
     
-    #print(f"스케줄러 설정 완료. 매일 한국 시간 기준 오전 7:30과 오후 9:00에 자동 실행됩니다.")
-    #print(f"현재 한국 시간: {get_kst_time().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"스케줄러 설정 완료. 매일 한국 시간 기준 오전 7:30과 오후 9:00에 자동 실행됩니다.")
+    print(f"현재 한국 시간: {get_kst_time().strftime('%Y-%m-%d %H:%M:%S')}")
     
-    #while True:
-    #    schedule.run_pending()
-    #    time.sleep(60)
-    main()  # 테스트용 직접 실행
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
+    #main()  # 테스트용 직접 실행

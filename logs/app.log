@@ -832,3 +832,24 @@ EFGIF의 상승은 인공지능 관련 수요 급증과 실적 호조에 기인�
 2025-04-08 03:22:30,433 - WDM - INFO - Get LATEST chromedriver version for google-chrome
 2025-04-08 03:22:30,739 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
 2025-04-08 03:23:10,770 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 03:28:12,791 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:28:22,378 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:29:45,463 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:29:46,245 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:29:46,563 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:29:46,889 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:30:20,326 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 03:33:03,684 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 03:33:11,550 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 03:34:27,189 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 03:34:27,957 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:34:28,321 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 03:34:28,645 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 03:35:28,718 - utils - INFO - 블로그 포스팅 성공: "EFG 84% 급등과 ECB 금리 인하 기대…유럽 금융주의 부활은 지속될까?"
+2025-04-08 07:30:47,697 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 07:30:55,390 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 07:31:58,132 - WDM - INFO - ====== WebDriver manager ======
+2025-04-08 07:31:58,970 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 07:31:59,384 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-08 07:31:59,768 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
+2025-04-08 07:33:01,950 - utils - INFO - 블로그 포스팅 성공: "급등락 종목이 부추기는 시장 변동성…CPI 데이터와 Fed 정책이 결정적 변수될까?"
