@@ -42,7 +42,9 @@ class NaverBlogPoster:
             # User-Agent 설정
             options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36')
             
-            service = Service(ChromeDriverManager().install())
+            # ChromeDriver 경로 직접 지정
+            chromedriver_path = Path(__file__).parent / 'chromedriver' / 'chromedriver-win64' / 'chromedriver.exe'
+            service = Service(executable_path=str(chromedriver_path))
             self.driver = webdriver.Chrome(service=service, options=options)
             self.driver.set_page_load_timeout(30)
             

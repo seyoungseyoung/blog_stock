@@ -158,54 +158,81 @@ class MarketAnalyzer:
 시장 주요 지표:
 """
         
+        # 뉴스 데이터 우선 처리 (있는 경우에만)
+        if 'news' in data and data['news']:
+            template += """
+1. 주요 시장 뉴스
+"""
+            # 뉴스 우선순위에 따라 정렬
+            priority_keywords = {
+                'high': ['tariff', 'trade', 'fed', 'interest rate', 'inflation', 'economy', 'market'],
+                'medium': ['earnings', 'stock', 'company', 'industry'],
+                'low': ['product', 'service', 'individual stock']
+            }
+            
+            for item in data['news']:
+                title = item['title'].lower()
+                priority = 'low'
+                for level, keywords in priority_keywords.items():
+                    if any(keyword in title for keyword in keywords):
+                        priority = level
+                        break
+                
+                template += f"- [{priority.upper()}] {item['title']}\n"
+
         # 시장 데이터 추가
         if 'biggest_gainer' in data:
             template += f"""
-1. 상승 주도주
+2. 상승 주도주
 - 종목: {data['biggest_gainer']['Name']} ({data['biggest_gainer']['Symbol']})
 - 상승률: {data['biggest_gainer']['Change_Pct']}%
 """
 
         if 'biggest_loser' in data:
             template += f"""
-2. 하락 주도주
+3. 하락 주도주
 - 종목: {data['biggest_loser']['Name']} ({data['biggest_loser']['Symbol']})
 - 하락률: {data['biggest_loser']['Change_Pct']}%
 """
 
         if 'biggest_active' in data:
             template += f"""
-3. 거래대금 상위
+4. 거래대금 상위
 - 종목: {data['biggest_active']['Name']} ({data['biggest_active']['Symbol']})
 - 등락률: {data['biggest_active']['Change_Pct']}%
 """
 
-        # 뉴스 데이터 추가 (있는 경우에만)
-        if 'news' in data and data['news']:
-            template += f"""
-4. 주요 시장 뉴스
-{self._format_news_list(data['news'])}
-"""
-
         template += """
 작성 요구사항:
-- 주요 종목들의 급등락 원인과 시장 영향
-- 시장 전반의 변동성과 불확실성 요인
-- 섹터별 차별화 동향
-- 금리, 통화정책, 경제지표와의 연관성
-- 글로벌 시장 간 상호작용
-- 주요 리스크 요인
-- 단기 변동성 요인
-- 중장기 시장 방향성
-- 주요 모니터링 포인트
+1. 거시경제 이슈 우선 분석
+   - 관세, 무역 관련 이슈
+   - 금리 정책 및 인플레이션 동향
+   - 글로벌 경제 지표 변화
+   - 주요 국가 간 경제 관계
+
+2. 시장 전반 동향
+   - 주요 지수 동향
+   - 섹터별 차별화 동향
+   - 거래량 및 변동성 분석
+   - 자금 흐름 및 투자 심리
+
+3. 분석 포인트
+   - 거시경제 이슈가 시장에 미치는 영향
+   - 단기적 시장 영향 요인
+   - 모니터링 포인트
+
+주의사항:
+- 거시경제 이슈를 우선적으로 다룰 것
+- 개별 종목 분석은 보조적으로만 언급
+- 미래 예측이나 가정은 제외
+- 구체적인 수치와 데이터 활용
+- 투자 조언이나 권유는 포함하지 않음
+- 별표(*)나 다른 특수문자는 절대 사용하지 않음
 
 작성 스타일:
 - 전문가적 관점에서 자연스럽게 긴 줄글 형태로 서술
-- 구체적인 데이터와 수치 활용
 - 핵심 내용 중심으로 간결하게 작성
 - 중복된 내용이나 반복적인 설명 제외
-- 투자 조언이나 권유는 포함하지 않음
-- 별표(*)나 다른 특수문자는 절대 사용하지 않음
 """
         
         return template
@@ -217,10 +244,10 @@ class MarketAnalyzer:
 시장 논평: {commentary}
 
 제목 작성 요구사항:
+- 소비자들에게 불필요한 설명이나 내용, 강조표시를 제거하기 (예 : 프롬프트의 내용을 반영했다는 글)
 - 의문형으로 전문성 있게 작성
 - 핵심이슈와 시장에 대한 영향력 강조
 - 종합적인 시장의 핵심 이슈를 반영해서 하나만 작성
-- 소비자들에게 불필요한 설명이나 내용, 강조표시를 제거하기 (예 : 프롬프트의 내용을 반영했다는 글)
 - 별표(*)나 다른 특수문자는 사용하지 않음
 
 제목 예시:
@@ -229,8 +256,8 @@ class MarketAnalyzer:
 - 10년물 금리 4.5% 돌파…시장 전환점 도래?
 
 유의사항:
-- 개별 종목명보다는 업종이나 시장 전체의 흐름을 반영
 - 소비자들에게 불필요한 설명이나 내용, 강조표시를 제거하기 (예 : 프롬프트의 내용을 반영했다는 글)
+- 개별 종목명보다는 업종이나 시장 전체의 흐름을 반영
 - 전문적이지만 조언 금지
 """
 
@@ -459,7 +486,9 @@ class MarketAnalyzer:
                 "시장": ["시장분석", "시장동향", "시장전망", "시장이슈", "시장리뷰"],
                 "투자": ["투자", "투자전략", "투자분석", "투자이슈", "투자전망"],
                 "경제": ["경제", "경제동향", "경제이슈", "경제전망", "글로벌경제"],
-                "미국": ["미국주식", "미국시장", "미국경제", "나스닥", "S&P500", "다우존스"]
+                "미국": ["미국주식", "미국시장", "미국경제", "나스닥", "S&P500", "다우존스"],
+                "거시경제": ["거시경제", "금리", "인플레이션", "고용", "GDP", "무역", "관세", "정책"],
+                "글로벌": ["글로벌시장", "글로벌경제", "국제무역", "환율", "원자재", "에너지"]
             }
             
             # 섹터/산업 키워드 세트
@@ -508,6 +537,14 @@ class MarketAnalyzer:
                         if len(clean_word) > 1:
                             content_keywords.append(clean_word)
             
+            # 거시경제 키워드 우선 추출
+            macro_keywords = []
+            macro_indicators = ["금리", "인플레이션", "고용", "GDP", "소비자물가", "생산자물가", 
+                              "무역", "관세", "정책", "환율", "원자재", "에너지", "글로벌경제"]
+            for indicator in macro_indicators:
+                if any(indicator in word for word in title_keywords + content_keywords):
+                    macro_keywords.append(indicator)
+            
             # 종목 심볼 추출 (특수문자 제거)
             symbols = []
             for word in title_keywords + content_keywords:
@@ -523,15 +560,12 @@ class MarketAnalyzer:
                             sector_keywords.append(indicator)
                             break
             
-            # 시장 지표 키워드 추출 (특수문자 제거)
-            market_indicators = ["금리", "인플레이션", "고용", "GDP", "소비자물가", "생산자물가", 
-                               "소매판매", "제조업지수", "서비스업지수", "주택가격", "실업률"]
-            market_keywords = [indicator for indicator in market_indicators 
-                             if any(indicator in word for word in title_keywords + content_keywords)]
-            
             # 최종 태그 구성 (특수문자 제거)
             final_tags = []
-            for tag in (base_tags + symbols + sector_keywords + market_keywords):
+            # 거시경제 키워드를 우선적으로 추가
+            final_tags.extend(macro_keywords)
+            # 나머지 태그 추가
+            for tag in (base_tags + symbols + sector_keywords):
                 # 특수문자 제거
                 clean_tag = ''.join(c for c in tag if c.isalnum() or c.isspace())
                 if len(clean_tag) > 1:
@@ -547,5 +581,5 @@ class MarketAnalyzer:
             self.logger.error(f"태그 생성 중 오류 발생: {e}")
             # 오류 발생 시 기본 태그 세트에서 랜덤하게 선택 (특수문자 제거)
             import random
-            base_tags = ["주식", "시장분석", "투자", "경제", "미국주식"]
+            base_tags = ["주식", "시장분석", "투자", "경제", "미국주식", "거시경제", "글로벌경제"]
             return random.sample(base_tags, 3)

@@ -853,3 +853,66 @@ EFGIF의 상승은 인공지능 관련 수요 급증과 실적 호조에 기인�
 2025-04-08 07:31:59,384 - WDM - INFO - Get LATEST chromedriver version for google-chrome
 2025-04-08 07:31:59,768 - WDM - INFO - Driver [C:\Users\tpdud\.wdm\drivers\chromedriver\win64\134.0.6998.165\chromedriver-win32/chromedriver.exe] found in cache
 2025-04-08 07:33:01,950 - utils - INFO - 블로그 포스팅 성공: "급등락 종목이 부추기는 시장 변동성…CPI 데이터와 Fed 정책이 결정적 변수될까?"
+2025-04-08 13:38:56,886 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 13:38:57,864 - data_collector - ERROR - Error collecting gainers data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-08 13:38:58,788 - data_collector - ERROR - Error collecting losers data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-08 13:38:59,771 - data_collector - ERROR - Error collecting most_active data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-08 13:39:00,820 - data_collector - ERROR - Error collecting top_etfs data: Missing optional dependency 'lxml'.  Use pip or conda to install lxml.
+2025-04-08 13:40:06,528 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 13:40:11,954 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 13:41:51,279 - utils - ERROR - 블로그 포스팅 실패
+2025-04-08 21:00:30,107 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 21:00:38,137 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 21:03:06,813 - utils - INFO - 블로그 포스팅 성공: "EFG International AG 84% 급등… 유럽 금융섹터 변동성 확대 신호일까?"
+2025-04-08 22:38:43,611 - utils - INFO - 프로그램 초기화 완료
+2025-04-08 22:38:51,387 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-08
+2025-04-08 22:41:23,583 - utils - INFO - 블로그 포스팅 성공: - 헬스케어 강세 vs 테크 약세…시장 회전(Sector Rotation) 가속화의 배경은?
+2025-04-09 07:30:20,672 - utils - INFO - 프로그램 초기화 완료
+2025-04-09 07:30:26,513 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-09
+2025-04-09 07:32:47,666 - utils - INFO - 블로그 포스팅 성공: "헬스케어 섹터 양극화 심화…관리 의료 vs 생명과학, 어디로 갈까?"
+2025-04-09 21:00:56,280 - utils - INFO - 프로그램 초기화 완료
+2025-04-09 21:01:02,041 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-09
+2025-04-09 21:03:32,893 - utils - INFO - 블로그 포스팅 성공: "헬스케어 섹터 양극화, 관리의료 강세 vs 바이오텍 약세…시장 전망은?"
+2025-04-10 09:09:21,699 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 09:09:27,588 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 09:11:36,691 - utils - INFO - 블로그 포스팅 성공: "RH 주가 28% 급등…프리미엄 소비재 시장의 성장 가능성은?"
+2025-04-10 09:11:45,014 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 09:11:50,520 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 09:13:55,780 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 09:14:50,186 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 09:14:53,941 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 09:17:18,715 - utils - INFO - 블로그 포스팅 성공: - RPM International 실적 부진이 건설 자재 업종에 미친 영향은?  
+- 원자재 가격 상승 속 기업들의 수익성 압박…시장 전망은?  
+- 건설 자재 업종 약세 vs 엔터테인먼트 강세…시장 분화의 원인은?  
+- 인플레이션과 공급망 이슈가 시장에 던지는 시그널은?  
+- 기업들의 원가 전가 능력이 주가 흐름을 좌우할까?  
+
+최종 선택:  
+"RPM International 실적 부진이 건설 자재 업종에 미친 영향은?"  
+
+이 제목은 RPM International의 실적 부진이 특정 업종(건설 자재)에 미친 영향을 의문형으로 전달하며, 시장의 핵심 이슈를 반영합니다. 또한 개별 종목보다는 업종과 시장 흐름에 초점을 맞추어 전문성을 유지하면서도 간결하게 표현했습니다.
+2025-04-10 09:21:23,652 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 09:21:29,327 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 09:22:39,254 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 09:22:45,049 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 09:25:01,720 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 10:51:57,290 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 10:52:03,023 - data_collector - ERROR - Error collecting news: Invalid character '(' position 5
+  line 1:
+h3.Mb(5px)
+     ^
+2025-04-10 10:53:33,506 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 10:53:40,799 - data_collector - ERROR - Error collecting news: Invalid character '(' position 5
+  line 1:
+h3.Mb(5px)
+     ^
+2025-04-10 10:55:53,642 - utils - INFO - 블로그 포스팅 성공: "미국 금리 동결 지속 속 AI·재생에너지 주목…시장의 다음 행보는?"
+2025-04-10 10:58:22,902 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 10:58:28,610 - data_collector - ERROR - Error collecting news: Invalid character '(' position 5
+  line 1:
+h3.Mb(5px)
+     ^
+2025-04-10 11:00:20,380 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 11:05:12,689 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 11:05:18,803 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 11:07:36,818 - utils - INFO - 블로그 포스팅 성공: - 미국 관세 유예 발표로 니케이 225 8% 급등… 아시아 시장 반등의 지속 가능성은?
