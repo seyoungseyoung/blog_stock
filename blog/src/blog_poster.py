@@ -14,6 +14,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from datetime import datetime
 from selenium.webdriver.common.action_chains import ActionChains
+import re
 
 class NaverBlogPoster:
     def __init__(self, config: dict):
@@ -114,265 +115,288 @@ class NaverBlogPoster:
         except Exception:
             return False
 
-    def generate_market_tags(self, title: str, content: str) -> List[str]:
-        """글의 내용에 따라 적절한 태그를 생성합니다."""
-        # 기본 태그 (항상 포함)
-        base_tags = [
-            "주식시장", "증권", "주식투자", "미국주식", "글로벌경제",
-            "시장분석", "투자정보", "주식정보", "시장동향", "금융시장"
-        ]
-        
-        # 시장 상황별 태그
-        market_condition_tags = {
-            "상승": ["주식상승", "매수전략", "상승장", "강세장", "매수기회"],
-            "하락": ["주식하락", "매도전략", "하락장", "약세장", "리스크관리"],
-            "변동성": ["변동성장세", "리스크관리", "투자전략", "자산관리", "포트폴리오"]
-        }
-        
-        # 자산군 태그
-        asset_tags = {
-            "주식": ["개별주식", "성장주", "가치주", "배당주", "기술주"],
-            "원자재": ["원자재", "금", "은", "원유", "commodities"],
-            "채권": ["채권", "국채", "회사채", "금리", "채권투자"],
-            "환율": ["환율", "달러", "외환시장", "달러인덱스", "외환"]
-        }
-        
-        # 글의 내용에서 키워드 분석
-        content_lower = content.lower()
-        selected_tags = set(base_tags)  # 중복 방지를 위해 set 사용
-        
-        # 시장 상황 태그 추가
-        if any(word in content_lower for word in ["상승", "급등", "강세", "매수"]):
-            selected_tags.update(market_condition_tags["상승"])
-        if any(word in content_lower for word in ["하락", "급락", "약세", "매도"]):
-            selected_tags.update(market_condition_tags["하락"])
-        if any(word in content_lower for word in ["변동성", "불확실성", "리스크"]):
-            selected_tags.update(market_condition_tags["변동성"])
-        
-        # 자산군 태그 추가
-        for asset_type, tags in asset_tags.items():
-            if asset_type.lower() in content_lower:
-                selected_tags.update(tags)
-        
-        # 현재 날짜 태그 추가
-        today = datetime.now()
-        date_tags = [
-            today.strftime("%Y년%m월"),
-            today.strftime("%Y년%m월%d일"),
-            "데일리브리핑",
-            "시장브리핑"
-        ]
-        selected_tags.update(date_tags)
-        
-        # 태그 리스트로 변환 및 최대 30개로 제한
-        final_tags = list(selected_tags)[:30]
-        return final_tags
+    def create_post(self, title: str, content: str, tags: List[str]) -> bool:
+        """네이버 블로그에 글을 포스팅합니다. (참고 코드 기반 수정)"""
+        if not self.driver:
+            self.logger.error("WebDriver가 초기화되지 않았습니다.")
+            return False
 
-    def format_blog_content(self, content: str) -> str:
-        """블로그 포스팅용으로 콘텐츠를 포맷팅합니다."""
-        try:
-            # 문단을 나누고 포맷팅
-            paragraphs = content.split('\n\n')
-            formatted_content = []
-            
-            for para in paragraphs:
-                if para.strip():
-                    # 소제목 처리 (숫자로 시작하거나 특수문자로 시작하는 경우)
-                    if any(para.strip().startswith(prefix) for prefix in ['1.', '2.', '3.', '#', '■', '▶']):
-                        formatted_content.append(f'<h2 style="font-size: 1.5em; color: #333; margin: 30px 0 15px 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">{para.strip()}</h2>')
-                    
-                    # 중요 문구 강조 (따옴표 안의 내용)
-                    elif para.strip().startswith('"') and para.strip().endswith('"'):
-                        formatted_content.append(f'<blockquote style="font-size: 1.1em; color: #666; margin: 20px 0; padding: 15px; background: #f9f9f9; border-left: 4px solid #0068c3;">{para.strip()}</blockquote>')
-                    
-                    # 일반 문단
-                    else:
-                        # 볼드 처리된 텍스트 유지 (**text**)
-                        para = para.replace('**', '<strong style="color: #0068c3;">')
-                        para = para.replace('**', '</strong>', 1)
-                        formatted_content.append(f'<p style="font-size: 1.1em; line-height: 1.8; margin: 15px 0; color: #333;">{para.strip()}</p>')
-
-            # 구분선 추가
-            divider = '<hr style="border: 0; height: 1px; background: #eee; margin: 30px 0;">'
-            
-            # 헤더 추가
-            header = f'''
-            <div style="background: #f8f9fa; padding: 20px; margin-bottom: 30px; border-radius: 5px;">
-                <h1 style="font-size: 1.8em; color: #1a1a1a; margin-bottom: 15px;">📈 오늘의 시장 분석</h1>
-                <p style="color: #666; font-size: 1.1em;">작성일: {datetime.now().strftime('%Y년 %m월 %d일')}</p>
-            </div>
-            '''
-            
-            # 푸터 추가
-            footer = f'''
-            <div style="background: #f8f9fa; padding: 20px; margin-top: 30px; border-radius: 5px;">
-                <p style="color: #666; font-size: 0.9em; margin: 0;">
-                    ※ 본 분석은 투자 권유가 아닌 정보 제공을 목적으로 합니다.<br>
-                    ※ 투자는 투자자 본인의 판단과 책임하에 진행하시기 바랍니다.
-                </p>
-            </div>
-            '''
-            
-            # 최종 콘텐츠 조합
-            final_content = header + '\n'.join(formatted_content) + footer
-            return final_content
-            
-        except Exception as e:
-            self.logger.error(f"Content formatting error: {e}")
-            return content  # 에러 발생 시 원본 콘텐츠 반환
-
-    def create_post(self, title: str, content: str, tags: List[str] = None) -> bool:
-        """블로그 포스트를 작성합니다."""
         try:
             # 글쓰기 페이지로 이동
+            print("- 글쓰기 페이지로 이동 중...")
             self.driver.get("https://blog.naver.com/gongnyangi/postwrite")
-            time.sleep(5)
-            
+            print("- 페이지 로딩 대기 (7초)...")
+            time.sleep(7)
             print(f"현재 URL: {self.driver.current_url}")
-            
-            # 페이지 및 팝업 로드를 위한 충분한 대기 시간
-            time.sleep(3)
-            
-            # 이전 글 작성 확인 팝업이 있는지 확인하고 처리 (최우선)
+            time.sleep(3) # 팝업 로드 대기
+
+            # 이전 글 작성 확인 팝업 처리 (참고 코드 방식)
             try:
-                # 팝업 확인 (명시적 대기 없이 빠르게 확인)
+                print("- 이전 글 팝업 확인 중...")
+                # 팝업 버튼이 나타날 때까지 조금 더 대기
+                WebDriverWait(self.driver, 5).until(
+                     EC.presence_of_element_located((By.CLASS_NAME, 'se-popup-button-text'))
+                )
                 cancel_buttons = self.driver.find_elements(By.CLASS_NAME, 'se-popup-button-text')
                 if cancel_buttons:
                     for button in cancel_buttons:
                         if button.text == '취소':
                             button.click()
-                            time.sleep(2)
-                            print("- 이전 글 취소 처리 완료")
+                            time.sleep(3) # 팝업 닫히는 시간
+                            print("- 이전 글 '취소' 처리 완료")
                             break
+            except TimeoutException:
+                 print("- 이전 글 팝업 없음 - 계속 진행")
             except Exception as e:
-                print("이전 글 팝업 없음 - 계속 진행")
-            
-            # 도움말 닫기 버튼이 있다면 클릭
+                print(f"- 이전 글 팝업 처리 중 오류 (무시하고 계속): {e}")
+
+            # 도움말 닫기 버튼 처리 (참고 코드 방식)
+            time.sleep(2)
             try:
+                print("- 도움말 팝업 확인 중...")
                 help_buttons = self.driver.find_elements(By.TAG_NAME, 'button')
                 for button in help_buttons:
-                    try:
-                        if button.get_attribute('class') and '닫기' in button.get_attribute('class'):
-                            button.click()
-                            time.sleep(1)
-                            print("- 도움말 닫기 완료")
-                            break
-                    except:
-                        continue
+                     try:
+                         if button.get_attribute('class') and '닫기' in button.get_attribute('class'):
+                             if button.is_displayed() and button.is_enabled():
+                                 button.click()
+                                 time.sleep(2)
+                                 print("- 도움말 닫기 완료")
+                                 break
+                     except: # StaleElementReference 등 예외 처리
+                         continue
             except Exception as e:
-                print("도움말 팝업 없음 - 계속 진행")
-            
-            # 제목 입력 (새로운 방식)
+                print(f"- 도움말 팝업 처리 중 오류 (무시하고 계속): {e}")
+
+            # 제목 입력 (참고 코드 방식)
             try:
-                # 제목 영역 찾기 시도 1: placeholder로 찾기
+                print("- 제목 영역 찾는 중...")
                 title_area = None
                 try:
-                    title_area = WebDriverWait(self.driver, 3).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, 'span.se-placeholder.__se_placeholder.se-ff-nanumgothic.se-fs32'))
+                    # 시도 1: Placeholder
+                    title_placeholder_selector = 'span.se-placeholder.__se_placeholder' # 좀 더 일반적일 수 있는 선택자
+                    title_area = WebDriverWait(self.driver, 5).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, title_placeholder_selector))
                     )
-                except:
-                    print("제목 영역을 placeholder로 찾지 못함 - 다른 방법 시도")
-                
-                # 제목 영역 찾기 시도 2: 직접 클래스로 찾기
-                if not title_area:
+                    print("- 제목 영역 찾음 (Placeholder)")
+                except TimeoutException:
+                    print("- 제목 Placeholder 없음, 다른 선택자 시도")
+                    # 시도 2: 특정 클래스 (참고 코드와 유사)
+                    title_class_selector = 'span.se-ff-nanumgothic.se-fs32.__se-node'
                     try:
-                        title_area = self.driver.find_element(By.CSS_SELECTOR, 'span.se-ff-nanumgothic.se-fs32.__se-node')
-                    except:
-                        print("제목 영역을 클래스로 찾지 못함")
-                
-                if not title_area:
-                    print("제목 영역을 찾을 수 없습니다")
-                    return False
-                
-                # 제목 영역 클릭 및 입력
+                         title_area = WebDriverWait(self.driver, 5).until(
+                             EC.element_to_be_clickable((By.CSS_SELECTOR, title_class_selector))
+                         )
+                         print("- 제목 영역 찾음 (클래스)")
+                    except TimeoutException:
+                         print("✗ 제목 영역을 찾을 수 없습니다.")
+                         return False
+
                 title_area.click()
                 time.sleep(1)
-                
-                # 제목 입력
+                print("- 제목 입력 중...")
                 actions = ActionChains(self.driver)
                 actions.send_keys(title).perform()
                 print("- 제목 입력 완료")
                 time.sleep(1)
-                
-                # Enter 키를 눌러 본문 영역으로 이동
+                print("- Enter 키 입력 (본문 이동)")
                 actions.send_keys(Keys.ENTER).perform()
-                time.sleep(1)
-                
+                time.sleep(3) # 본문 영역 활성화 대기
             except Exception as e:
-                print(f"제목 입력 실패: {e}")
+                print(f"✗ 제목 입력 실패: {e}")
                 return False
-            
-            # 본문 입력
+
+            # 본문 입력 (문자 단위 send_keys 및 초소형 대기)
             try:
-                # 본문 입력 (Tab으로 이동했으므로 바로 입력 가능)
-                actions = ActionChains(self.driver)
-                # 본문을 그대로 입력
-                actions.send_keys(content.strip())  # 앞뒤 공백만 제거하고 그대로 입력
-                actions.perform()
-                print("- 본문 입력 완료")
-                time.sleep(2)
+                print("- 본문 문자 단위 입력 시작 (매우 느릴 수 있음)...")
+                # --- iframe 전환 필요 시 여기에 추가 --- 
+                # try: self.driver.switch_to.frame(...) except: ...
+
+                # 본문 영역 포커스 확보 (기존 로직 유지)
+                editor_body_selector = 'div.se-component-content p.se-text-paragraph'
+                try:
+                    editor_element = WebDriverWait(self.driver, 10).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, editor_body_selector))
+                    )
+                    self.driver.execute_script("arguments[0].click();", editor_element)
+                    print("- 본문 영역 포커스 확보 완료")
+                    time.sleep(1)
+                except Exception as focus_e:
+                    print(f"- 본문 영역 포커스 실패 (무시하고 입력 시도): {focus_e}")
+                    # 포커스 실패해도 입력은 시도
+                
+                actions = ActionChains(self.driver) # ActionChains 객체 생성
+                cleaned_content = content.strip()
+                total_chars = len(cleaned_content)
+                print(f"- 총 {total_chars} 문자 입력 예정")
+                
+                for i, char in enumerate(cleaned_content):
+                    if char == '\n':
+                        actions.send_keys(Keys.ENTER)
+                    else:
+                        actions.send_keys(char)
+                    
+                    actions.perform() # 각 문자/Enter 전송
+                    time.sleep(0.05) # 각 문자 입력 후 0.05초 대기 (속도 조절 가능)
+                    
+                    # 진행 상황 로그 (너무 자주 찍히지 않도록 조절)
+                    if (i + 1) % 100 == 0 or (i + 1) == total_chars:
+                        print(f"  ... {i+1}/{total_chars} 문자 입력 완료")
+                        
+                print("- 모든 본문 문자 입력 완료.")
+                time.sleep(3) # 모든 본문 입력 후 안정화 시간
+
+                # --- iframe 전환했다면 복귀 --- 
+                # try: self.driver.switch_to.default_content() except: ...
+
             except Exception as e:
-                print(f"본문 입력 실패: {e}")
+                print(f"✗ 본문 문자 단위 입력 중 오류 발생: {e}")
+                # iframe 전환 시 복귀 필요
+                # try: self.driver.switch_to.default_content() except: ...
                 return False
-            
-            # 첫 번째 발행 버튼 클릭
+
+            # 첫 번째 발행 버튼 클릭 (JavaScript 사용)
             time.sleep(3)
             try:
+                print("- 첫 번째 발행 버튼 클릭 시도 (JavaScript)...")
                 publish_script = """
                     var publishBtn = document.querySelector('button.publish_btn__m9KHH');
                     if (publishBtn) {
                         publishBtn.click();
                         return true;
+                    } else {
+                        console.error('Publish button not found!');
+                        return false;
                     }
-                    return false;
                 """
                 if self.driver.execute_script(publish_script):
-                    print("- 첫 번째 발행 버튼 클릭 완료")
-                    time.sleep(3)
-                    
-                    # 태그 입력
-                    if tags:
-                        try:
-                            for tag in tags:
-                                tag_input = WebDriverWait(self.driver, 10).until(
-                                    EC.presence_of_element_located((By.CSS_SELECTOR, 'input#tag-input.tag_input__rvUB5'))
-                                )
-                                tag_input.clear()  # 기존 입력값 제거
-                                tag_input.send_keys(tag)
-                                time.sleep(0.5)
-                                tag_input.send_keys(Keys.ENTER)
-                                time.sleep(1)
-                                print(f"- 태그 입력 완료: {tag}")
-                            print("- 모든 태그 입력 완료")
-                            time.sleep(2)
-                        except Exception as e:
-                            print(f"태그 입력 실패: {e}")
-                    
-                    # 최종 발행 버튼 클릭 (정확한 선택자 사용)
-                    final_publish_script = """
-                        var finalBtn = document.querySelector('button.confirm_btn__WEaBq[data-testid="seOnePublishBtn"]');
-                        if (finalBtn) {
-                            finalBtn.click();
-                            return true;
-                        }
-                        return false;
-                    """
-                    if self.driver.execute_script(final_publish_script):
-                        print("- 최종 발행 버튼 클릭 완료")
-                        time.sleep(3)
-                        return True
-                    else:
-                        print("최종 발행 버튼을 찾을 수 없습니다")
-                        return False
-                    
-            except Exception as e:
-                print(f"발행 과정 실패: {e}")
-                return False
-            
-        except Exception as e:
-            print(f"포스팅 실패: {e}")
-            return False
+                    print("- 첫 번째 발행 버튼 클릭 완료. 발행 설정 창 대기 (5초)...")
+                    time.sleep(5)
+                else:
+                    print("✗ 첫 번째 발행 버튼을 JavaScript로 찾거나 클릭할 수 없습니다.")
+                    # 실패 시 Selenium 클릭 시도 (Fallback)
+                    try:
+                         print("- Selenium 클릭으로 재시도...")
+                         publish_button_selector = 'button.publish_btn__m9KHH'
+                         publish_button = WebDriverWait(self.driver, 5).until(
+                             EC.element_to_be_clickable((By.CSS_SELECTOR, publish_button_selector))
+                         )
+                         publish_button.click()
+                         print("- 첫 번째 발행 버튼 클릭 완료 (Selenium). 발행 설정 창 대기 (5초)...")
+                         time.sleep(5)
+                    except Exception as e_fallback:
+                         print(f"✗ 첫 번째 발행 버튼 클릭 최종 실패: {e_fallback}")
+                         return False
 
+            except Exception as e:
+                print(f"✗ 첫 번째 발행 버튼 처리 중 오류: {e}")
+                return False
+
+            # --- 발행 설정 (카테고리, 태그 등, 기존 안정화 코드 유지) ---
+            try:
+                print("- 카테고리 선택 과정 시작...")
+                # 카테고리 선택 시도 (이전 코드와 유사, 에러 시 무시)
+                try:
+                    category_button_selector = 'button.selectbox_button__jb1Dt'
+                    category_button = WebDriverWait(self.driver, 10).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, category_button_selector))
+                    )
+                    self.driver.execute_script("arguments[0].click();", category_button)
+                    time.sleep(2)
+                    category_label_selector = 'label[for="11_종목 추천 및 분석"]' # 카테고리명 확인!
+                    category_label = WebDriverWait(self.driver, 10).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, category_label_selector))
+                    )
+                    self.driver.execute_script("arguments[0].click();", category_label)
+                    print("- 카테고리 선택 완료")
+                    time.sleep(2)
+                except Exception as cat_e:
+                    print(f"- 카테고리 선택 실패 (무시): {cat_e}")
+                
+                # 태그 입력 시도 (이전 코드와 유사, 에러 시 무시)
+                if tags:
+                    try:
+                        print("- 태그 입력 시작...")
+                        tag_input_selector = 'input#tag-input.tag_input__rvUB5'
+                        tag_input = WebDriverWait(self.driver, 10).until(
+                            EC.presence_of_element_located((By.CSS_SELECTOR, tag_input_selector))
+                        )
+                        for tag in tags:
+                            tag_input.clear()
+                            tag_input.send_keys(tag)
+                            time.sleep(0.7)
+                            tag_input.send_keys(Keys.ENTER)
+                            time.sleep(1.5)
+                        print("- 모든 태그 입력 완료")
+                        time.sleep(2)
+                    except Exception as tag_e:
+                        print(f"- 태그 입력 실패 (무시): {tag_e}")
+                else:
+                    print("- 입력할 태그 없음")
+
+            except Exception as e_publish_settings:
+                 print(f"- 발행 설정(카테고리/태그) 중 오류 발생 (무시하고 최종 발행 시도): {e_publish_settings}")
+            
+            # 최종 발행 버튼 클릭 (JavaScript 사용)
+            try:
+                print("- 최종 발행 버튼 클릭 시도 (JavaScript)...")
+                final_publish_script = """
+                    var finalBtn = document.querySelector('button.confirm_btn__WEaBq[data-testid="seOnePublishBtn"]');
+                    if (finalBtn) {
+                        finalBtn.click();
+                        return true;
+                    } else {
+                         console.error('Final publish button not found!');
+                         return false;
+                    }
+                """
+                if self.driver.execute_script(final_publish_script):
+                    print("- 최종 발행 버튼 클릭 완료. 포스팅 완료 대기 (7초)...")
+                    time.sleep(7)
+                else:
+                    print("✗ 최종 발행 버튼을 JavaScript로 찾거나 클릭할 수 없습니다.")
+                    # 실패 시 Selenium 클릭 시도 (Fallback)
+                    try:
+                         print("- Selenium 클릭으로 재시도...")
+                         final_publish_button_selector = 'button.confirm_btn__WEaBq[data-testid="seOnePublishBtn"]'
+                         final_publish_button = WebDriverWait(self.driver, 5).until(
+                              EC.element_to_be_clickable((By.CSS_SELECTOR, final_publish_button_selector))
+                         )
+                         final_publish_button.click()
+                         print("- 최종 발행 버튼 클릭 완료 (Selenium). 포스팅 완료 대기 (7초)...")
+                         time.sleep(7)
+                    except Exception as e_final_fallback:
+                         print(f"✗ 최종 발행 버튼 클릭 최종 실패: {e_final_fallback}")
+                         return False
+
+                # 발행 후 URL 확인
+                if "postwrite" not in self.driver.current_url:
+                     print("\n✓ 블로그 포스팅 성공!")
+                     return True
+                else:
+                     # 발행은 되었으나 페이지 전환 안된 경우도 있을 수 있음 (네트워크 등) - 로그 추가
+                     print(f"✗ 포스팅 실패 또는 확인 불가: 현재 URL이 여전히 postwrite 페이지입니다 ({self.driver.current_url})")
+                     return False
+
+            except Exception as e:
+                print(f"✗ 최종 발행 버튼 처리 중 오류: {e}")
+                return False
+
+        except (TimeoutException, NoSuchElementException, WebDriverException) as e:
+            self.logger.error(f"포스팅 중 오류 발생: {e}", exc_info=True)
+            print(f"✗ 포스팅 실패: {e}")
+            # self.driver.save_screenshot(f"error_screenshot_{datetime.now():%Y%m%d_%H%M%S}.png")
+            return False
+        except Exception as e:
+            self.logger.error(f"예상치 못한 오류 발생: {e}", exc_info=True)
+            print(f"✗ 예상치 못한 포스팅 오류: {e}")
+            return False
+        finally:
+            # iframe 전환 시 복귀 로직 (필요시 활성화)
+            try:
+                self.driver.switch_to.default_content()
+            except Exception: pass
+            
     def manual_login(self) -> bool:
         """자동으로 로그인을 진행합니다."""
         try:

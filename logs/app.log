@@ -916,3 +916,662 @@ h3.Mb(5px)
 2025-04-10 11:05:12,689 - utils - INFO - 프로그램 초기화 완료
 2025-04-10 11:05:18,803 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
 2025-04-10 11:07:36,818 - utils - INFO - 블로그 포스팅 성공: - 미국 관세 유예 발표로 니케이 225 8% 급등… 아시아 시장 반등의 지속 가능성은?
+2025-04-10 21:00:30,178 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 21:00:37,495 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-10
+2025-04-10 21:03:21,902 - utils - INFO - 블로그 포스팅 성공: "트럼프 관세 유예로 주식·채권 시장 반등…장기적 영향은?"
+2025-04-11 07:30:28,557 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 07:30:34,375 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 07:32:08,649 - blog_poster - ERROR - Failed to setup WebDriver: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF70ED21F55+78133]
+	GetHandleVerifier [0x00007FF70ED21FB0+78224]
+	(No symbol) [0x00007FF70EAE91BA]
+	(No symbol) [0x00007FF70EB25A1A]
+	(No symbol) [0x00007FF70EB219DD]
+	(No symbol) [0x00007FF70EB75108]
+	(No symbol) [0x00007FF70EB746E0]
+	(No symbol) [0x00007FF70EB66F33]
+	(No symbol) [0x00007FF70EB30358]
+	(No symbol) [0x00007FF70EB310C3]
+	GetHandleVerifier [0x00007FF70EFEBA8D+3001453]
+	GetHandleVerifier [0x00007FF70EFE5E72+2977874]
+	GetHandleVerifier [0x00007FF70F00497D+3103581]
+	GetHandleVerifier [0x00007FF70ED3C7EA+186826]
+	GetHandleVerifier [0x00007FF70ED443FF+218591]
+	GetHandleVerifier [0x00007FF70ED29D94+110452]
+	GetHandleVerifier [0x00007FF70ED29F42+110882]
+	GetHandleVerifier [0x00007FF70ED10379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog\blog\src\blog_poster.py", line 48, in setup_driver
+    self.driver = webdriver.Chrome(service=service, options=options)
+                  ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 45, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        DesiredCapabilities.CHROME["browserName"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        keep_alive,
+        ^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 56, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        command_executor=ChromiumRemoteConnection(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        options=options,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 208, in __init__
+    self.start_session(capabilities)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 292, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF70ED21F55+78133]
+	GetHandleVerifier [0x00007FF70ED21FB0+78224]
+	(No symbol) [0x00007FF70EAE91BA]
+	(No symbol) [0x00007FF70EB25A1A]
+	(No symbol) [0x00007FF70EB219DD]
+	(No symbol) [0x00007FF70EB75108]
+	(No symbol) [0x00007FF70EB746E0]
+	(No symbol) [0x00007FF70EB66F33]
+	(No symbol) [0x00007FF70EB30358]
+	(No symbol) [0x00007FF70EB310C3]
+	GetHandleVerifier [0x00007FF70EFEBA8D+3001453]
+	GetHandleVerifier [0x00007FF70EFE5E72+2977874]
+	GetHandleVerifier [0x00007FF70F00497D+3103581]
+	GetHandleVerifier [0x00007FF70ED3C7EA+186826]
+	GetHandleVerifier [0x00007FF70ED443FF+218591]
+	GetHandleVerifier [0x00007FF70ED29D94+110452]
+	GetHandleVerifier [0x00007FF70ED29F42+110882]
+	GetHandleVerifier [0x00007FF70ED10379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+
+2025-04-11 11:43:56,314 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 11:44:02,691 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 11:46:39,424 - utils - INFO - 블로그 포스팅 성공: "미중 무역 갈등 재점화… 글로벌 시장 충격, 하락세 지속될까?"
+2025-04-11 17:59:16,555 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 17:59:23,290 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 17:59:30,197 - data_collector - ERROR - Error analyzing HMY: could not convert string to float: '12.82M'
+2025-04-11 17:59:30,893 - data_collector - ERROR - Error analyzing SMMT: could not convert string to float: '8.378M'
+2025-04-11 17:59:31,729 - data_collector - ERROR - Error analyzing GFI: could not convert string to float: '6.621M'
+2025-04-11 17:59:33,365 - data_collector - ERROR - Error analyzing OR: could not convert string to float: '2.06M'
+2025-04-11 17:59:34,078 - data_collector - ERROR - Error analyzing ALHC: could not convert string to float: '4.439M'
+2025-04-11 17:59:34,848 - data_collector - ERROR - Error analyzing AU: could not convert string to float: '3.809M'
+2025-04-11 17:59:35,553 - data_collector - ERROR - Error analyzing ORLA: could not convert string to float: '2.611M'
+2025-04-11 17:59:36,977 - data_collector - ERROR - Error analyzing AGL: could not convert string to float: '7.298M'
+2025-04-11 17:59:37,876 - data_collector - ERROR - Error analyzing IAG: could not convert string to float: '33.591M'
+2025-04-11 17:59:38,618 - data_collector - ERROR - Error analyzing AEM: could not convert string to float: '7.414M'
+2025-04-11 17:59:39,365 - data_collector - ERROR - Error analyzing AGI: could not convert string to float: '5.581M'
+2025-04-11 17:59:40,095 - data_collector - ERROR - Error analyzing EGO: could not convert string to float: '2.779M'
+2025-04-11 17:59:40,806 - data_collector - ERROR - Error analyzing LI: could not convert string to float: '10.874M'
+2025-04-11 17:59:41,602 - data_collector - ERROR - Error analyzing KGC: could not convert string to float: '23.745M'
+2025-04-11 17:59:42,333 - data_collector - ERROR - Error analyzing SAND: could not convert string to float: '5.838M'
+2025-04-11 17:59:43,047 - data_collector - ERROR - Error analyzing GDS: could not convert string to float: '5.291M'
+2025-04-11 17:59:43,798 - data_collector - ERROR - Error analyzing FNV: could not convert string to float: '1.765M'
+2025-04-11 17:59:44,637 - data_collector - ERROR - Error analyzing NEM: could not convert string to float: '20.153M'
+2025-04-11 17:59:45,346 - data_collector - ERROR - Error analyzing ACT: could not convert string to float: '1.641M'
+2025-04-11 17:59:46,085 - data_collector - ERROR - Error analyzing WPM: could not convert string to float: '3.138M'
+2025-04-11 18:02:05,833 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:02:13,863 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 18:03:24,098 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:03:31,842 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 18:04:40,270 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:04:47,714 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 18:04:47,718 - market_analyzer - ERROR - 시장 분석 중 오류 발생: MarketDataCollector.get_stock_recommendations() missing 1 required positional argument: 'market_data'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 95, in analyze_market_trend
+    recommendations = collector.get_stock_recommendations(num_recommendations=5)
+TypeError: MarketDataCollector.get_stock_recommendations() missing 1 required positional argument: 'market_data'
+2025-04-11 18:04:54,796 - utils - ERROR - 블로그 포스팅 중 오류: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 140, in main
+    success = poster.create_post(title, content, tags)
+TypeError: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+2025-04-11 18:05:03,191 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:05:11,506 - market_analyzer - INFO - Processed 5 news items with date: 2025-04-11
+2025-04-11 18:05:11,509 - market_analyzer - ERROR - 시장 분석 중 오류 발생: MarketDataCollector.get_stock_recommendations() missing 1 required positional argument: 'market_data'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 95, in analyze_market_trend
+    recommendations = collector.get_stock_recommendations(num_recommendations=5)
+TypeError: MarketDataCollector.get_stock_recommendations() missing 1 required positional argument: 'market_data'
+2025-04-11 18:05:18,385 - utils - ERROR - 블로그 포스팅 중 오류: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 140, in main
+    success = poster.create_post(title, content, tags)
+TypeError: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+2025-04-11 18:06:27,947 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:06:35,638 - utils - ERROR - 프로그램 실행 중 오류 발생: MarketAnalyzer.analyze_market_trend() takes 1 positional argument but 3 were given
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 93, in main
+    analysis = analyzer.analyze_market_trend(market_data, news)
+TypeError: MarketAnalyzer.analyze_market_trend() takes 1 positional argument but 3 were given
+2025-04-11 18:09:29,804 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:11:19,428 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 134, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 18:14:45,222 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:17:04,914 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 176, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 18:23:30,105 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:25:25,978 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 199, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 18:29:03,644 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:30:21,750 - utils - ERROR - 프로그램 실행 중 오류 발생: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 196, in main
+    success = poster.create_post(title, content, default_tags)
+TypeError: NaverBlogPoster.create_post() takes 3 positional arguments but 4 were given
+2025-04-11 18:31:50,892 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:34:08,591 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 199, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 18:40:20,460 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:40:28,325 - market_analyzer - ERROR - 시장 분석 실패: 'MarketAnalyzer' object has no attribute '_collect_market_data'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 89, in analyze_market_trend
+    market_data = self._collect_market_data()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MarketAnalyzer' object has no attribute '_collect_market_data'. Did you mean: 'analyze_market_data'?
+2025-04-11 18:40:28,329 - utils - ERROR - 프로그램 실행 중 오류 발생: 시장 분석 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 79, in main
+    raise Exception("시장 분석 실패")
+Exception: 시장 분석 실패
+2025-04-11 18:42:03,745 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:42:11,077 - market_analyzer - ERROR - 시장 분석 실패: MarketAnalyzer.analyze_market_data() missing 1 required positional argument: 'market_data'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 89, in analyze_market_trend
+    market_data = self.analyze_market_data()
+TypeError: MarketAnalyzer.analyze_market_data() missing 1 required positional argument: 'market_data'
+2025-04-11 18:42:11,079 - utils - ERROR - 프로그램 실행 중 오류 발생: 시장 분석 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 79, in main
+    raise Exception("시장 분석 실패")
+Exception: 시장 분석 실패
+2025-04-11 18:44:04,104 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:45:18,547 - market_analyzer - ERROR - 시장 분석 실패: 'Change'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 115, in analyze_market_trend
+    title, content = self._create_blog_content(analysis)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 708, in _create_blog_content
+    현재 주가: {analysis['biggest_gainer']['Price']} {analysis['biggest_gainer']['Change']} ({analysis['biggest_gainer']['Change %']}%)
+                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'Change'
+2025-04-11 18:45:18,550 - utils - ERROR - 프로그램 실행 중 오류 발생: 시장 분석 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 79, in main
+    raise Exception("시장 분석 실패")
+Exception: 시장 분석 실패
+2025-04-11 18:53:47,762 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:55:11,051 - market_analyzer - ERROR - 시장 분석 실패: 'Name'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 119, in analyze_market_trend
+    title, content = self._create_blog_content(analysis)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\aaa\code\blog_stock\blog\src\market_analyzer.py", line 731, in _create_blog_content
+    content += f"""### {i}. {stock['Name']} ({stock['Symbol']})
+                             ~~~~~^^^^^^^^
+KeyError: 'Name'
+2025-04-11 18:55:11,054 - utils - ERROR - 프로그램 실행 중 오류 발생: 시장 분석 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 79, in main
+    raise Exception("시장 분석 실패")
+Exception: 시장 분석 실패
+2025-04-11 18:56:44,395 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 18:57:58,227 - utils - ERROR - 프로그램 실행 중 오류 발생: 'biggest_gainer'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 109, in main
+    오늘 가장 눈에 띄는 상승을 보인 {analysis['biggest_gainer']['Name']} ({analysis['biggest_gainer']['Symbol']})의 움직임을 살펴보겠습니다.
+                                     ~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'biggest_gainer'
+2025-04-11 19:05:02,967 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:24:45,565 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:27:06,751 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:27:29,193 - blog_poster - ERROR - Login failed: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.85)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E31D1F55+78133]
+	GetHandleVerifier [0x00007FF7E31D1FB0+78224]
+	(No symbol) [0x00007FF7E2F991BA]
+	(No symbol) [0x00007FF7E2F84F25]
+	(No symbol) [0x00007FF7E2FA9EE4]
+	(No symbol) [0x00007FF7E301EC8F]
+	(No symbol) [0x00007FF7E303EB12]
+	(No symbol) [0x00007FF7E3016F33]
+	(No symbol) [0x00007FF7E2FE0358]
+	(No symbol) [0x00007FF7E2FE10C3]
+	GetHandleVerifier [0x00007FF7E349BA8D+3001453]
+	GetHandleVerifier [0x00007FF7E3495E72+2977874]
+	GetHandleVerifier [0x00007FF7E34B497D+3103581]
+	GetHandleVerifier [0x00007FF7E31EC7EA+186826]
+	GetHandleVerifier [0x00007FF7E31F43FF+218591]
+	GetHandleVerifier [0x00007FF7E31D9D94+110452]
+	GetHandleVerifier [0x00007FF7E31D9F42+110882]
+	GetHandleVerifier [0x00007FF7E31C0379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\blog_poster.py", line 76, in login
+    self.driver.execute_script(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"document.getElementsByName('id')[0].value='{self.username}'")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 407, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.85)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E31D1F55+78133]
+	GetHandleVerifier [0x00007FF7E31D1FB0+78224]
+	(No symbol) [0x00007FF7E2F991BA]
+	(No symbol) [0x00007FF7E2F84F25]
+	(No symbol) [0x00007FF7E2FA9EE4]
+	(No symbol) [0x00007FF7E301EC8F]
+	(No symbol) [0x00007FF7E303EB12]
+	(No symbol) [0x00007FF7E3016F33]
+	(No symbol) [0x00007FF7E2FE0358]
+	(No symbol) [0x00007FF7E2FE10C3]
+	GetHandleVerifier [0x00007FF7E349BA8D+3001453]
+	GetHandleVerifier [0x00007FF7E3495E72+2977874]
+	GetHandleVerifier [0x00007FF7E34B497D+3103581]
+	GetHandleVerifier [0x00007FF7E31EC7EA+186826]
+	GetHandleVerifier [0x00007FF7E31F43FF+218591]
+	GetHandleVerifier [0x00007FF7E31D9D94+110452]
+	GetHandleVerifier [0x00007FF7E31D9F42+110882]
+	GetHandleVerifier [0x00007FF7E31C0379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+
+2025-04-11 19:27:29,203 - utils - ERROR - 프로그램 실행 중 오류 발생: 네이버 로그인 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 217, in main
+    raise Exception("네이버 로그인 실패")
+Exception: 네이버 로그인 실패
+2025-04-11 19:36:47,674 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:37:43,394 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 158, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 19:37:47,443 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023F3802F250>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/bfd66a220aa7397dad3795dce8d48e74
+2025-04-11 19:38:57,236 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:42:24,261 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:42:31,632 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 19:43:26,303 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 19:43:30,357 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000264FEB08550>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/56be1899b7ea3f52ec91becdcff859fa
+2025-04-11 19:43:34,423 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000264FEB08410>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/56be1899b7ea3f52ec91becdcff859fa
+2025-04-11 19:43:38,475 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000264FF5328B0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/56be1899b7ea3f52ec91becdcff859fa
+2025-04-11 19:44:45,353 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 19:44:54,487 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 19:48:35,950 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:03:10,076 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:03:17,449 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 20:08:00,634 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:09:16,863 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:10:23,390 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:11:52,919 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:13:10,068 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:14:16,685 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:17:42,518 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:18:56,957 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:20:43,798 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:21:57,055 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:24:03,202 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:24:59,425 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:25:03,485 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000203CF937B10>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/f0ced3b40637e7be04a8fe3538de2a9c
+2025-04-11 20:25:07,540 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000203CF9379D0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/f0ced3b40637e7be04a8fe3538de2a9c
+2025-04-11 20:25:11,602 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000203CF76F230>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/f0ced3b40637e7be04a8fe3538de2a9c
+2025-04-11 20:26:50,800 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:27:53,073 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:27:57,104 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002710AFA3390>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6674975d505efaed92a3566c4a7aba08
+2025-04-11 20:28:01,133 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002710AFA3250>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6674975d505efaed92a3566c4a7aba08
+2025-04-11 20:28:05,191 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002710ADDEFD0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6674975d505efaed92a3566c4a7aba08
+2025-04-11 20:28:42,037 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:28:49,418 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 20:29:45,812 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:30:30,807 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:31:44,915 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:33:26,596 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:36:06,187 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:37:14,348 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:41:04,205 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:42:16,254 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:45:33,063 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:46:41,180 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:49:05,803 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:50:15,919 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:55:37,933 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:56:43,674 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 20:59:07,223 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:00:43,903 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:01:46,732 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:03:54,467 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:04:46,672 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:04:50,726 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CF4C9AE710>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/60e78e7e691fa392df4511e1d7790535
+2025-04-11 21:04:54,764 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CF4C9AE5D0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/60e78e7e691fa392df4511e1d7790535
+2025-04-11 21:04:58,811 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CF4C80B490>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/60e78e7e691fa392df4511e1d7790535
+2025-04-11 21:05:35,428 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:06:30,690 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:06:34,721 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000172B92165D0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/27f15415984f7b8b8f64ad340fc6361e
+2025-04-11 21:06:38,777 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000172B9216490>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/27f15415984f7b8b8f64ad340fc6361e
+2025-04-11 21:06:42,817 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000172B906B5C0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/27f15415984f7b8b8f64ad340fc6361e
+2025-04-11 21:08:16,177 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:08:24,497 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:08:32,370 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 21:09:16,055 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:09:20,139 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028499B9F110>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6d4a37f66fc60674d2af9c0276615cfa
+2025-04-11 21:09:24,189 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028499B9EFD0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6d4a37f66fc60674d2af9c0276615cfa
+2025-04-11 21:09:28,242 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028499530050>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/6d4a37f66fc60674d2af9c0276615cfa
+2025-04-11 21:10:44,702 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:10:52,142 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 21:11:31,152 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:11:35,193 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020F06FBEAD0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/45708e53e776cc629dd2d0daaa39344d
+2025-04-11 21:11:39,263 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020F06FBE990>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/45708e53e776cc629dd2d0daaa39344d
+2025-04-11 21:11:43,303 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020F06E87100>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/45708e53e776cc629dd2d0daaa39344d
+2025-04-11 21:12:58,175 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:13:50,579 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:15:26,640 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:16:20,140 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:17:13,521 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:17:57,578 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 156, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:18:01,617 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002968E95DF90>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/e6be2ac35d38ce2b6edb655fb50081ee
+2025-04-11 21:18:05,690 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002968E95DE50>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/e6be2ac35d38ce2b6edb655fb50081ee
+2025-04-11 21:18:09,727 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002968E77F6F0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/e6be2ac35d38ce2b6edb655fb50081ee
+2025-04-11 21:19:28,959 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:20:21,830 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 125, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:21:37,754 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:22:51,794 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 125, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:25:47,914 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:25:55,202 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 21:26:07,925 - market_analyzer - WARNING - 주요 시장 뉴스 섹션 생성 실패: 데이터 누락
+2025-04-11 21:26:54,268 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:27:53,905 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:28:09,912 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:28:20,678 - data_collector - ERROR - Error collecting news: NaTType does not support strftime
+2025-04-11 21:28:33,291 - market_analyzer - WARNING - 주요 시장 뉴스 섹션 생성 실패: 데이터 누락
+2025-04-11 21:29:18,269 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:31:08,776 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:32:09,358 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:33:29,265 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:34:27,418 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:35:24,386 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:36:26,955 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:37:08,712 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:38:10,802 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:39:51,056 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:40:57,496 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 21:44:04,956 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 21:45:09,303 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:18:41,713 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:19:43,831 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:20:35,268 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:21:36,690 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:22:58,207 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:24:01,976 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:24:44,133 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:25:35,500 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 130, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:25:39,551 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000186232B6350>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/3bcc9853b29347d63777b0252dcf8036
+2025-04-11 22:25:43,595 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000186232B7390>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/3bcc9853b29347d63777b0252dcf8036
+2025-04-11 22:25:47,641 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000018623063E10>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/3bcc9853b29347d63777b0252dcf8036
+2025-04-11 22:27:48,848 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:28:07,584 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:28:28,503 - market_analyzer - ERROR - Tag generation error: expected string or bytes-like object, got 'list'
+2025-04-11 22:28:47,061 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 132, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:29:30,583 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:29:49,752 - market_analyzer - ERROR - Tag generation error: expected string or bytes-like object, got 'list'
+2025-04-11 22:30:42,219 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 132, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:43:53,843 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:44:36,124 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 131, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:46:11,376 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:47:36,692 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 131, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:49:06,545 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:49:52,677 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 131, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:52:19,439 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:53:03,060 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 126, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:54:36,312 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 22:55:52,646 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 126, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 22:58:13,163 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 23:05:41,370 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 126, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 23:08:12,691 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 23:10:49,000 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 126, in main
+    raise Exception("블로그 포스팅 실패")
+Exception: 블로그 포스팅 실패
+2025-04-11 23:10:57,474 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 23:21:33,701 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 23:29:47,316 - utils - ERROR - 프로그램 실행 중 오류 발생: 블로그 포스팅 실패
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_stock\blog\src\main.py", line 126, in main
+    except Exception as e:
+            ^^^^^^^^^^^^^^
+Exception: 블로그 포스팅 실패
+2025-04-11 23:31:04,543 - utils - INFO - 작업 시작: 2025-04-11 23:31:04
+2025-04-11 23:39:25,083 - utils - INFO - 포스팅 성공: '[종목추천] 2025-04-11 오늘의 추천종목'
+2025-04-11 23:39:27,491 - utils - INFO - 작업 종료. 소요 시간: 0:08:22.951511
+2025-04-11 23:43:09,675 - utils - INFO - 작업 시작: 2025-04-11 23:43:09
+2025-04-11 23:43:28,307 - market_analyzer - ERROR - 종목 MSPR 처리 중 오류: can only concatenate str (not "int") to str
+2025-04-11 23:43:28,307 - market_analyzer - ERROR - 종목 BON 처리 중 오류: can only concatenate str (not "int") to str
+2025-04-11 23:43:28,307 - market_analyzer - ERROR - 종목 BGLC 처리 중 오류: can only concatenate str (not "int") to str
+2025-04-11 23:43:28,308 - market_analyzer - ERROR - 종목 SMMT 처리 중 오류: can only concatenate str (not "int") to str
+2025-04-11 23:43:28,308 - market_analyzer - ERROR - 종목 RXRX 처리 중 오류: can only concatenate str (not "int") to str
+2025-04-11 23:44:41,299 - utils - ERROR - 포스팅 실패: '[종목추천] 2025-04-11 오늘의 추천종목'
+2025-04-11 23:44:43,555 - utils - INFO - 작업 종료. 소요 시간: 0:01:33.884195
+2025-04-11 23:45:03,903 - utils - INFO - 작업 시작: 2025-04-11 23:45:03
+2025-04-11 23:54:21,028 - utils - INFO - 포스팅 성공: '[종목추천] 2025-04-11 오늘의 추천종목'
+2025-04-11 23:54:23,470 - utils - INFO - 작업 종료. 소요 시간: 0:09:19.570726
+2025-04-11 23:57:11,494 - utils - INFO - 스케줄러 시작 및 초기 로거 설정 완료
